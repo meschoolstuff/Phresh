@@ -1,8 +1,11 @@
 ## Phresh
 
 Team Members: Mike Lim, Kevin Chang, Michael Thompson
+Team Members: FORCING ERRORS FORCING ERRORS
 Team Members: Mike Lim, Kevin Chang, Michael Thompson
-Team Members: Mike Lim, Kevin Chang, Michael Thompson
+Team Members: FORCING ERRORS FORCING ERRORS
+Team Members: FORCING ERRORS FORCING ERRORS
+
 
 
 * [General info](#general-info)
