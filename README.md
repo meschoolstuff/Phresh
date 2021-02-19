@@ -1,6 +1,10 @@
 ## Phresh
 
+<<<<<<< HEAD
 Team Members: Mike Lim, Kevin Chang, Michael Thompson
+=======
+Team Members: Mike Wack Lim, Kevin PHRESH Chang, Michael is whack
+>>>>>>> 1f72453c0f633be85c0b08658c912200eb5751d7
 
 * [General info](#general-info)
 * [Technologies](#technologies)
