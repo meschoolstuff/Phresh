@@ -1,4 +1,5 @@
-## My Web Application (Title)
+## Phresh (Title)
+Team member - Michael Thompson
 
 * [General info](#general-info)
 * [Technologies](#technologies)
