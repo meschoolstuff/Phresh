@@ -1,6 +1,8 @@
 ## Phresh (Title)
 Team member - Michael Thompson
 
+Team Member Mike Lim
+
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
