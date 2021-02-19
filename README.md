@@ -1,6 +1,6 @@
 ## Phresh
 
-Team Members: Mike Wack Lim, Kevin Chang, Michael is whack
+Team Members: Mike Wack Lim, Kevin PHRESH Chang, Michael is whack
 
 * [General info](#general-info)
 * [Technologies](#technologies)
