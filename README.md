@@ -1,6 +1,6 @@
 ## My Web Application (Title)
 
-Team Members: Mike Lim, Kevin is fresh Chang, Michael is whack
+Team Members: Mike Lim, Kevin Chang, Michael Thompson
 
 * [General info](#general-info)
 * [Technologies](#technologies)
