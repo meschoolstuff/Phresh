@@ -1,4 +1,5 @@
-## My Web Application (Title)
+## Phresh (Title)
+Team member - Michael Thompson
 
 Team Member Mike Lim, Kevin Chang
 
