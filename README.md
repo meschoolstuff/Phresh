@@ -2,7 +2,6 @@
 
 Team Members: Mike Lim, Kevin Chang, Michael Thompson
 
-
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
