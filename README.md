@@ -1,6 +1,6 @@
 ## My Web Application (Title)
 
-Team Member Mike Lim, Kevin "fresh" Chang
+Team Members: Mike Lim, Kevin is fresh Chang, Michael is whack
 
 * [General info](#general-info)
 * [Technologies](#technologies)
