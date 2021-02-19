@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Phresh (Title)
 Team member - Michael Thompson "Hello all"
 =======
@@ -6,6 +7,11 @@ Team member - Michael Thompson "Hello all"
 
 Team Members: Mike Lim, Kevin Chang, Michael is whack
 >>>>>>> 7da06071a2b4aa68b60b7e36043183008492c6f4
+=======
+## My Web Application (Title)
+
+Team Members: Mike Lim, Kevin is fresh Chang, Michael is whack
+>>>>>>> 87408f2acba3fdf5f02a84aa54a3dcc5de037bfe
 
 * [General info](#general-info)
 * [Technologies](#technologies)
