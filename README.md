@@ -1,6 +1,6 @@
 ## Phresh
 
-Team Members: Mike Lim, Kevin Chang, Michael Thompson
+Team Members: Mike Lim, Kevin Chang, Michael is whack
 
 * [General info](#general-info)
 * [Technologies](#technologies)
