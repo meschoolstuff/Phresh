@@ -1,6 +1,6 @@
 ## My Web Application (Title)
 
-Team Member Mike Lim, Kevin "Phresh" Chang
+Team Member Mike Lim, Kevin "fresh" Chang
 
 * [General info](#general-info)
 * [Technologies](#technologies)
