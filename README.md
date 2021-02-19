@@ -1,5 +1,7 @@
 ## My Web Application (Title)
 
+Team Member Mike Lim
+
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
