@@ -1,6 +1,6 @@
 ## Phresh
 
-Team Members: Mike Lim, Kevin PHRESH BOI Chang, Michael Thompson
+Team Members: Mike dji Lim, Kevin BOI Chang, Michael whack Thompson
 
 * [General info](#general-info)
 * [Technologies](#technologies)
