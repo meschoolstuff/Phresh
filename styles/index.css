@@ -16,24 +16,25 @@
 }
 #home {
     width: 20%;
-    padding: 1%;
+    padding: 5%;
 }
 #die {
     width: 20%;
-    padding: 1%;
+    padding: 5%;
 }
 #group {
     width: 20%;
-    padding: 1%;
+    padding: 5%;
 }
 #list {
     width: 20%;
-    padding: 1%;
+    padding: 5%;
 }
 #settings {
     width: 20%;
-    padding: 1%;
+    padding: 5%;
 }
+
 body {
     background-color: coral;
 }
