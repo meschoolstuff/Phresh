@@ -34,7 +34,36 @@
     width: 20%;
     padding: 5%;
 }
-
 body {
     background-color: coral;
+}
+.container {
+    width: 75%;
+    float: right;
+}
+#Welcome {
+    width: 100%;
+    font-size: 25pt;
+}
+#logo {
+    width: 20%;
+}
+#logo img{
+    width: 100%;
+}
+.card-body {
+    text-align: center;
+    margin-top: 10%;
+}
+#test1 {
+    width: 50%;
+}
+#test2 {
+    width: 50%;
+}
+#test3 {
+    width: 50%;
+}
+#test4 {
+    width: 50%;
 }
