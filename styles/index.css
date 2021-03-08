@@ -1,0 +1,39 @@
+#home img{
+    width: 100%;
+    
+}
+#die img{
+    width: 100%;
+}
+#group img{
+    width: 100%;
+}
+#list img{
+    width: 100%;
+}
+#settings img{
+    width: 100%;
+}
+#home {
+    width: 20%;
+    padding: 1%;
+}
+#die {
+    width: 20%;
+    padding: 1%;
+}
+#group {
+    width: 20%;
+    padding: 1%;
+}
+#list {
+    width: 20%;
+    padding: 1%;
+}
+#settings {
+    width: 20%;
+    padding: 1%;
+}
+body {
+    background-color: coral;
+}
