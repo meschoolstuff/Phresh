@@ -34,22 +34,51 @@
     width: 20%;
     padding: 5%;
 }
-
 body {
     background-color: coral;
 }
-
-#host {
-    text-align: center;
-    margin-top: 60%;
+.container {
+    width: 75%;
+    float: right;
 }
-
-#join {
+#Welcome {
+    width: 100%;
+    font-size: 25pt;
+}
+#logo {
+    width: 20%;
+}
+#logo img{
+    width: 100%;
+}
+.card-body {
     text-align: center;
     margin-top: 10%;
+}
+#test1 {
+    width: 50%;
+}
+#test2 {
+    width: 50%;
+}
+#test3 {
+    width: 50%;
+}
+#test4 {
+    width: 50%;
 }
 
 #back {
     margin-top: 15%;
     margin-left: 5%;
+}
+
+#card {
+    margin-top: 35%;
+    margin-left: 11%;
+}
+
+#sectionTitle {
+    margin-left: -35%;
+    margin-top: 2%;
 }
