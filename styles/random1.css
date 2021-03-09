@@ -38,16 +38,17 @@ body {
     background-color: coral;
 }
 .container {
-    width: 75%;
-    float: right;
+    width: 100%;
+    text-align: center;
 }
-#Welcome {
+#name {
     width: 100%;
     font-size: 25pt;
 }
-#logo {
-    width: 20%;
+#maps img{
+    width: 100%;
 }
+
 #logo img{
     width: 100%;
 }
@@ -66,4 +67,14 @@ body {
 }
 #test4 {
     width: 50%;
+}
+#description {
+    margin-top: 50%;
+}
+#yes {
+    width: 30%;
+    margin: 2%;
+}
+#no {
+    width: 30%;
 }

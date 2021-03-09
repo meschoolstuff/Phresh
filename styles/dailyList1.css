@@ -67,3 +67,18 @@ body {
 #test4 {
     width: 50%;
 }
+
+#back {
+    margin-top: 15%;
+    margin-left: 5%;
+}
+
+#card {
+    margin-top: 35%;
+    margin-left: 11%;
+}
+
+#sectionTitle {
+    margin-left: -35%;
+    margin-top: 2%;
+}
