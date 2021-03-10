@@ -90,17 +90,9 @@ body {
     margin-left: 3%;
 }
 
-#previous {
-    margin-top: -80%;
-}
-
-#next {
-    margin-top: -80%;
-}
-
 .box {
     width: 50%;
-    height: 60vh;
+    height: 55vh;
     background-color: darkseagreen;
     padding: 4%;
 }
@@ -113,6 +105,10 @@ body {
 }
 
 .imageBox img {
-    min-height: 100%; 
+    height: 100%; 
     width: auto;
+}
+
+#buttons {
+    margin-left: 35%;
 }
