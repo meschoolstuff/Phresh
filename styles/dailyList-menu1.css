@@ -73,33 +73,12 @@ body {
     margin-left: 5%;
 }
 
+#card {
+    margin-top: 35%;
+    margin-left: 9%;
+}
+
 #sectionTitle {
-    margin-left: -34%;
+    margin-left: -35%;
     margin-top: 2%;
-}
-
-#list {
-    margin-top: 25%;
-    width: 100%;
-    height: 120%;
-}
-
-.description {
-    margin-top: -25%;
-    margin-left: 3%;
-    margin-bottom: 14%;
-}
-
-#buttons {
-    margin-top: -10%;
-}
-
-#previous {
-    margin-top: -80%;
-
-}
-
-#next {
-    margin-top: -80%;
-
 }

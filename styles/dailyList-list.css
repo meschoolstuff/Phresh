@@ -73,12 +73,46 @@ body {
     margin-left: 5%;
 }
 
-#card {
-    margin-top: 35%;
-    margin-left: 11%;
+#sectionTitle {
+    margin-left: -34%;
+    margin-top: 2%;
 }
 
-#sectionTitle {
-    margin-left: -35%;
-    margin-top: 2%;
+#list {
+    margin-top: 1%;
+    width: 100%;
+    height: 120%;
+}
+
+.description {
+    margin-top: -50%;
+    padding-bottom: 8%;
+    margin-left: 3%;
+}
+
+#previous {
+    margin-top: -80%;
+}
+
+#next {
+    margin-top: -80%;
+}
+
+.box {
+    width: 50%;
+    height: 60vh;
+    background-color: darkseagreen;
+    padding: 4%;
+}
+
+.imageBox {
+    width: 100%;
+    height: 60%;
+    background-color:darkturquoise;
+    margin: 0 auto;
+}
+
+.imageBox img {
+    min-height: 100%; 
+    width: auto;
 }
