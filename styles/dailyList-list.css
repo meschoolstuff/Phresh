@@ -1,105 +1,14 @@
-#home img{
-    width: 100%;
-    
-}
-#die img{
-    width: 100%;
-}
-#group img{
-    width: 100%;
-}
-#list img{
-    width: 100%;
-}
-#settings img{
-    width: 100%;
-}
-#home {
-    width: 20%;
-    padding: 5%;
-}
-#die {
-    width: 20%;
-    padding: 5%;
-}
-#group {
-    width: 20%;
-    padding: 5%;
-}
-#list {
-    width: 20%;
-    padding: 5%;
-}
-#settings {
-    width: 20%;
-    padding: 5%;
-}
-body {
-    background-color: coral;
-}
-.container {
-    width: 75%;
-    float: right;
-}
-#Welcome {
-    width: 100%;
-    font-size: 25pt;
-}
-#logo {
-    width: 20%;
-}
-#logo img{
-    width: 100%;
-}
-.card-body {
-    text-align: center;
-    margin-top: 10%;
-}
-#test1 {
-    width: 50%;
-}
-#test2 {
-    width: 50%;
-}
-#test3 {
-    width: 50%;
-}
-#test4 {
-    width: 50%;
-}
-
-#back {
-    margin-top: 15%;
-    margin-left: 5%;
-}
-
-#sectionTitle {
-    margin-left: -34%;
-    margin-top: 2%;
-}
-
-#list {
-    margin-top: 1%;
-    width: 100%;
-    height: 120%;
-}
-
-.description {
-    margin-top: -50%;
-    padding-bottom: 8%;
-    margin-left: 3%;
-}
 
 .box {
     width: 50%;
-    height: 55vh;
+    height: 35vh;
     background-color: darkseagreen;
     padding: 4%;
 }
 
 .imageBox {
     width: 100%;
-    height: 60%;
+    height: 30vh;
     background-color:darkturquoise;
     margin: 0 auto;
 }
@@ -107,8 +16,5 @@ body {
 .imageBox img {
     height: 100%; 
     width: auto;
-}
-
-#buttons {
-    margin-left: 35%;
+    margin: 0 auto;
 }
