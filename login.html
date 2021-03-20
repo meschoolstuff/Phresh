@@ -1,127 +1,141 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Phresh</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project" />
-    <meta name="author" content="BCIT" />
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="utf-8" />
+  <title>Phresh</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project" />
+  <meta name="author" content="BCIT" />
 
-    <link href="styles/login.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css"
-    />
-  </head>
+  <link href="styles/login.css" rel="stylesheet" />
 
-  <body>
-    <nav class="navbar bg-warning">
-      <div class="container-fluid" style="height: 100px">
-        <div id="logo">
-          <img src="images/logo.png" alt="logo" style="height: 100px" />
-        </div>
-        <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+</head>
+
+<body>
+  <nav class="navbar bg-warning">
+    <div class="container-fluid" style="height: 100px">
+      <div id="logo">
+        <img src="images/logo.png" alt="logo" style="height: 100px" />
       </div>
-    </nav>
+      <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
+    </div>
+  </nav>
 
-    <div
-      id="firebaseui-auth-container"
-      class="container-fluid text-center mt-5 w-75"
-    ></div>
-    <div id="loader">Loading...</div>
+  <div class="container">
+    <h1 class="display-4">Welcome!</h1>
+    <h1>Lets get you logged in ...</h1>
+  <div id="firebaseui-auth-container" class="container-fluid text-center mt-5"></div>
+  <div id="loader">Loading...</div>
+  </div>
 
-    <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
-      <div class="container py-3">
-        <i class="btn fas fa-home fa-2x px-auto"></i>
-        <i class="btn fas fa-dice fa-2x px-auto"></i>
-        <i class="btn fas fa-list fa-2x px-auto"></i>
-        <i class="btn fas fa-users fa-2x px-auto"></i>
-        <i class="btn fas fa-cogs fa-2x px-auto"></i>
-      </div>
-    </footer>
+  <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
+    <div class="container py-3">
+      <i class="btn fas fa-home fa-2x px-auto"></i>
+      <i class="btn fas fa-dice fa-2x px-auto"></i>
+      <i class="btn fas fa-list fa-2x px-auto"></i>
+      <i class="btn fas fa-users fa-2x px-auto"></i>
+      <i class="btn fas fa-cogs fa-2x px-auto"></i>
+    </div>
+  </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
-    ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
 
-    <script
-      src="https://kit.fontawesome.com/26da0e4274.js"
-      crossorigin="anonymous"
-    ></script>
+  <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+  <script src="scripts/firebase_api_phresh.js"></script>
 
-    <script src="scripts/firebase_api_phresh.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCsip9yJYJlEDScQxnBiiQ0bqlY8zvrjqY",
+      authDomain: "phresh-923a3.firebaseapp.com",
+      projectId: "phresh-923a3",
+      storageBucket: "phresh-923a3.appspot.com",
+      messagingSenderId: "440477861757",
+      appId: "1:440477861757:web:5432949a206083d468ee14",
+    };
 
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyCsip9yJYJlEDScQxnBiiQ0bqlY8zvrjqY",
-        authDomain: "phresh-923a3.firebaseapp.com",
-        projectId: "phresh-923a3",
-        storageBucket: "phresh-923a3.appspot.com",
-        messagingSenderId: "440477861757",
-        appId: "1:440477861757:web:5432949a206083d468ee14",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore(); 
+  </script>
 
-    <script>
-      // Initialize the FirebaseUI Widget using Firebase.
-      var ui = new firebaseui.auth.AuthUI(firebase.auth());
-      var uiConfig = {
-        callbacks: {
-          signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-            // User successfully signed in.
-            // Return type determines whether we continue the redirect automatically
-            // or whether we leave that to developer to handle.
+  <script>
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    var uiConfig = {
+      callbacks: {
+        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+          // User successfully signed in.
+          // Return type determines whether we continue the redirect automatically
+          // or whether we leave that to developer to handle.
+          //------------------------------------------------------------------------------------------
+          // The code below is modified from default snippet provided by the FB documentation.
+          //
+          // If the user is a "brand new" user, then create a new "user" in your own database.
+          // Assign this user with the name and email provided.
+          // Before this works, you must enable "Firestore" from the firebase console.
+          // The Firestore rules must allow the user to write. 
+          //------------------------------------------------------------------------------------------
+          var user = authResult.user;
+          if (authResult.additionalUserInfo.isNewUser) {         //if new user
+            db.collection("users").doc(user.uid).set({           //write to firestore
+              name: user.displayName,                           //"users" collection
+              email: user.email                                  //with authenticated user's ID (user.uid)
+            }).then(function () {
+              console.log("New user added to firestore");
+              window.location.assign("main.html");               //re-direct to main.html after signup
+            })
+              .catch(function (error) {
+                console.log("Error adding new user: " + error);
+              });
+          } else {
             return true;
-          },
-          uiShown: function () {
-            // The widget is rendered.
-            // Hide the loader.
-            document.getElementById("loader").style.display = "none";
-          },
+          }
+          return false;
         },
-        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-        signInFlow: "popup",
-        signInSuccessUrl: "main.html",
-        signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
-          //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-          //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-          //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-          firebase.auth.EmailAuthProvider.PROVIDER_ID,
-          //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-        ],
-        // Terms of service url.
-        tosUrl: "<your-tos-url>",
-        // Privacy policy url.
-        privacyPolicyUrl: "<your-privacy-policy-url>",
-      };
-      // The start method will wait until the DOM is loaded.
-      ui.start("#firebaseui-auth-container", uiConfig);
-    </script>
-  </body>
+
+        uiShown: function () {
+          // The widget is rendered.
+          // Hide the loader.
+          document.getElementById("loader").style.display = "none";
+        },
+      },
+
+      // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+      signInFlow: "popup",
+      signInSuccessUrl: "main.html",
+      signInOptions: [
+        // Leave the lines as is for the providers you want to offer your users.
+        //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+        //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        //firebase.auth.PhoneAuthProvider.PROVIDER_ID
+      ],
+      // Terms of service url.
+      tosUrl: "<your-tos-url>",
+      // Privacy policy url.
+      privacyPolicyUrl: "<your-privacy-policy-url>",
+    };
+
+    // The start method will wait until the DOM is loaded.
+    ui.start("#firebaseui-auth-container", uiConfig);
+  </script>
+</body>
+
 </html>
