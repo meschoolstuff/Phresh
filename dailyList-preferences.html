@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Phresh</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project" />
+    <meta name="author" content="BCIT" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+    <link href="styles/template.css" rel="stylesheet" />
+    <link href="styles/dailyList-preferences.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <nav class="navbar bg-warning">
+        <div class="container-fluid">
+            <div id="logo">
+                <img src="images/logo.png" alt="logo" />
+            </div>
+            <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="sectionTitle">
+            <h1 class="display-4">Preferences</h1>
+            <div class="container-fluid mt-1">
+                <a href="dailyList-menu.html" type="button" class="btn btn-info">Back</a>
+                <a href="dailyList-list.html" type="button" class="btn btn-dark">Confirm</a>
+            </div>
+        </div>
+
+        <div id="preferences">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                        type="button" role="tab" aria-controls="home" aria-selected="true">Location</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                        type="button" role="tab" aria-controls="profile" aria-selected="false">Preferences</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+                        type="button" role="tab" aria-controls="contact" aria-selected="false">Budget</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <ul class="settings">
+                        <li><span>Downtown Vancouver</span>
+                            <span id="">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                        value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1"></label>
+                                </div>
+                            </span>
+                        </li>
+                        <li><span>West Vancouver</span>
+                            <span id="">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                        value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1"></label>
+                                </div>
+                            </span>
+                        </li>
+                        <li>East Vancouver</li>
+                        <li>North Vancouver</li>
+                        <li>South Vancouver</li>
+                        <li>Burnaby</li>
+                        <li>Lougheed</li>
+                        <li>Richmond</li>
+                        <li>Port Coquitlam</li>
+                        <li>Port Moody</li>
+                        <li>Surrey</li>
+                        <li>Delta</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <ul class="settings">
+                        <li>Fast Food</li>
+                        <li>Canadian</li>
+                        <li>Chinese</li>
+                        <li>Taiwanese</li>
+                        <li>Japanese</li>
+                        <li>Korean</li>
+                        <li>Seafood</li>
+                        <li>BBQ</li>
+                        <li>Hot Pot</li>
+                        <li>Vegan</li>
+                        <li>Vegetarian</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <ul class="settings">
+                        <li>High</li>
+                        <li>Medium</li>
+                        <li>Low</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
+            <div class="container py-3">
+                <i class="fas fa-home fa-2x px-auto"></i>
+                <i class="fas fa-dice fa-2x px-auto"></i>
+                <i class="fas fa-list fa-2x px-auto"></i>
+                <i class="fas fa-users fa-2x px-auto"></i>
+                <i class="fas fa-cogs fa-2x px-auto"></i>
+            </div>
+        </footer>
+
+        <!----------------------------------------------->
+        <!-- JS: Boostrap, Firebase, API related    -->
+        <!----------------------------------------------->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+        <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
