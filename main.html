@@ -24,6 +24,10 @@
     </div>
   </nav>
 
+  <div class="container">
+    <h1 class="display-4">Welcome <span id="name-goes-here"></span>!</h1>
+  </div>
+
   <div class="container text-center" style="width: 100%">
     <div class="container text-center py-5">
       <a id="test1" href="#" class="btn btn-primary">Login/Create Account</a>
@@ -54,6 +58,38 @@
     crossorigin="anonymous"></script>
 
   <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
+
+  <script src="scripts/firebase_api_phresh.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        // Do something for the user here.
+      } else {
+        // No user is signed in.
+      }
+    });
+
+    function sayHello() {
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          // User is signed in.
+          // Do something for the user here.
+          console.log(user.uid);
+          db.collection("users").doc(user.uid)
+            .get()
+            .then(function (doc) {
+              var n = doc.data().name;
+              $("#name-goes-here").text(n);
+            })
+        } else {
+          // No user is signed in.
+        }
+      });
+    }
+    sayHello();
+  </script>
 </body>
 
 </html>
