@@ -32,7 +32,7 @@
             <h1 class="display-4"><span id="name-goes-here"></span>'s Settings</h1>
             <div class="container-fluid mt-1">
                 <a href="group-use-preferences.html" type="button" class="btn btn-info">Back</a>
-                <button type="button" class="btn btn-danger">Logout</button>
+                <button type="button" id="logout" class="btn btn-danger">Logout</button>
             </div>
         </div>
 
@@ -111,13 +111,13 @@
 
         <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
             <div class="container py-3">
-              <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
-              <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
-              <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
-              <a class="btn fas fa-users fa-2x px-auto" href="group-use-preferences.html"></a>
-              <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
+                <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
+                <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
+                <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
+                <a class="btn fas fa-users fa-2x px-auto" href="group-use-preferences.html"></a>
+                <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
             </div>
-          </footer>
+        </footer>
 
         <!----------------------------------------------->
         <!-- JS: Boostrap, Firebase, API related    -->
@@ -141,6 +141,8 @@
         <!-- JS files: Your own JavaScript functions included here    -->
         <!--------------------------------------------------------------------->
         <script src="scripts/my_functions.js"></script>
+
+        <!--Saves the user's settings-->
         <script>
             function getFormInputs() {
                 document.getElementById("finish").addEventListener('click', function () {
@@ -168,6 +170,15 @@
             }
             getFormInputs();
         </script>
+
+        <!-- logout functionality -->
+        <script>
+            const logout = document.getElementById("logout").addEventListener('click', function (){
+                auth.signOut();
+                location.replace("login.html");
+            })
+        </script>
+
 
 </body>
 
