@@ -22,7 +22,14 @@ li + span {
     width: 300px;
 }
 
-div .form-check.form-check-inline {
+div .btn.btn-dark {
     float: right;
-    margin-right: -0.6em;
+}
+
+.tab-content + div {
+    margin-left: 10%;
+}
+
+.checkboxes {
+    margin: 3%;
 }

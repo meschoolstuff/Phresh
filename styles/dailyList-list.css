@@ -12,5 +12,15 @@ p {
 }
 
 .card.container-fluid img {
-    height: 250px;
+    height: 245px;
+}
+
+#cardContainer {
+    height: calc(200vh + 62vh);
+    width: 360px;
+    margin: 0 auto;
+}
+
+#cardContainer a {
+    margin: 2%;
 }
