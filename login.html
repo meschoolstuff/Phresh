@@ -98,10 +98,10 @@
                 .then(function() {
                   console.log("New user added to firestore");
                   db.collection("rooms").doc(timeStamp + "").set({
-                    one: "restaurant 1",
-                    two: "restaurant 2",
-                    three: "restaurant 3",
-                    four: "restaurant 4",
+                    one: 0,
+                    two: 0,
+                    three: 0,
+                    four: 0,
                   })
                 })
                 .then(function () {
