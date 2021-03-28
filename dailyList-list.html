@@ -35,7 +35,7 @@
   </div>
 
   <div id="cardContainer">
-    <!-- Here is container for cards  -->
+    <!-- Container for cards  -->
     <div id="cards-go-here">
     </div>
   </div>
@@ -66,13 +66,12 @@
   <!-- JS files: Your own JavaScript functions included here    -->
 
   <script>
-    function ShowCollection() {
-      let count = 0;
+    function ShowCollection() { //put choice in brackets
       db.collection("restaurants-list")
-        .get()    //get whole collection
+      // .where(choice, "==", true)
+        .get()                                    //get whole collection
         .then(function (snap) {
-          snap.forEach(function (doc) { //cycle thru each doc 
-            count++;           
+          snap.forEach(function (doc) {           //cycle thru each doc 
 
             // do something with each document
             var pic = doc.data().img;             //key "picture"
@@ -81,7 +80,7 @@
 
             // construct the string for card
             var codestring = '<div class="card mt-3 container-fluid">'
-              + '<img src="' + pic + '" class="card-img-top mt-3">'
+              + '<img src="' + pic + '" class="card-img-top">'
               + '<div class="card-body">'
               + '<h5 class="card-title">' + heading + '</h5>'
               + '<p class="card-text">' + bio + '</p>'

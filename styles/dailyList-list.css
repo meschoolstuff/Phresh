@@ -3,22 +3,23 @@ p {
 }
 
 .card-body {
-    width: 108%;
-    margin-left: -0.6rem;
-}
-
-.carousel-item {
-    height: 600px;
+    width: 105%;
+    margin-left: -0.4rem;
+    padding: 3%;
 }
 
 .card.container-fluid img {
-    height: 245px;
+    height: 248px;
+    margin-top: 4%;
+}
+
+.card.mt-3.container-fluid {
+    width: 355px;
 }
 
 #cardContainer {
-    height: calc(200vh + 62vh);
-    width: 360px;
     margin: 0 auto;
+    margin-bottom: 13.5vh;
 }
 
 #cardContainer a {

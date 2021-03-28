@@ -159,12 +159,21 @@
                             .doc(user.uid)
                             .collection("preferences-list")
                             .add({
-                                "Fast Food": fastFood,   //from checkbox
-                                "Asian Food": asianFood,     //from checkbox
+                                "Fast Food": fastFood,              //fast food + asian food
+                                "Asian Food": asianFood,            //from checkbox
                                 "American Food": americanFood,      //from checkbox
-                                "Seafood": seafood,     //from checkbox
-                                "Vegetarian": vegetarian      //from checkbox
+                                "Seafood": seafood,                 //from checkbox
+                                "Vegetarian": vegetarian            //from checkbox
                             })
+
+                            //.then(function () {
+
+                                // if (fastFood && asianFood) {
+                                    // ffaf = true;
+                                    // showCollection("ffaf");
+                                // }
+                            // }); -->
+
                     })
                 })
             }
@@ -173,7 +182,7 @@
 
         <!-- logout functionality -->
         <script>
-            const logout = document.getElementById("logout").addEventListener('click', function (){
+            const logout = document.getElementById("logout").addEventListener('click', function () {
                 auth.signOut();
                 location.replace("login.html");
             })

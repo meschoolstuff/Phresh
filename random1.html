@@ -12,6 +12,8 @@
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
   <link href="styles/random1.css" rel="stylesheet" />
+  <link href="styles/template.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -24,23 +26,22 @@
     </div>
   </nav>
 
+  <div class="container mt-2">
+    <h1 class="display-4">Random!</h1>
+  </div>
+
   <div id="cardContainer">
-  <div class="container-fluid">
-    <div class="card container-fluid">
-      <iframe width="100%" height="320" class="mt-2 mb-2" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJ5f5T_SF3hlQRnRB6ZAeyWjU&destination=place_id:ChIJ4ZMubN93hlQRzF5qeOexMmg&key=AIzaSyCrvQOtoZY8NHztTLD60XfklA_IwjZ9vEo"></iframe>
-      </div>
-  </div>
+    <!-- Container for card  -->
+    <div id="restaurant-goes-here"></div>
   </div>
 
-
-  <div id="caption" class="mt-3">
-    <h5>[Restaurant Title]</h5>
-    <p>[Restaurant Description]</p>
+  <div id="buttons">
+    <div class="container-fluid text-center mt-4">
+      <button onclick="location.reload()" id="pass" type="button" class="btn btn-primary">Pass</button>
+      <button id="directions" type="button" class="btn btn-success">Directions</button>
+    </div>
   </div>
 
-  <div class="container-fluid text-center">
-    <a type="button" class="btn btn-primary text-center container-fluid">Pass</a>
-  </div>
 
 
   <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
@@ -53,10 +54,46 @@
     </div>
   </footer>
 
+  <!-- JS: Boostrap, Firebase, API related    -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
   <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+
+  <script src="scripts/firebase_api_phresh.js"></script>
+
+
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <script>
+    function displayRandomRestaurant() {
+      var randomNum = Math.floor(Math.random() * 5) + 1
+      db.collection("restaurants-list")
+        .where("id", ">=", randomNum)
+        .limit(1)
+        .get()
+        .then(function (snap) {
+          snap.forEach(function (doc) {
+
+            var pic = doc.data().img;             //key "picture"
+            var heading = doc.data().title;       //key "name"
+            var bio = doc.data().description;
+
+            var restaurant = '<img src="' + pic + '" class="card-img-top mt-2">'
+            + '<h5 class="card-title mt-3">' + heading + '</h5>'
+            + '<p class="card-text">' + bio + '</p>'
+            
+            $("#restaurant-goes-here").append(restaurant);
+          })
+        })
+    }
+    displayRandomRestaurant();
+
+  </script>
 </body>
 
 </html>

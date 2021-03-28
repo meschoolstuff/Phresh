@@ -1,12 +1,24 @@
-* body {
-    background-color: rgb(255, 127, 80);
-}
 
 #caption {
     width: 94%;
     margin: 0 auto;
 }
 
+#directions {
+    float: right;
+    margin-bottom: 5%;
+}
+
+#buttons button {
+    margin: 2%;
+    width: 45%;
+}
+
 #cardContainer {
-    margin-top: 2em;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#cardContainer img {
+    height: 248px;
 }
