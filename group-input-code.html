@@ -42,11 +42,26 @@
 
     <form>
       <div class="form-group container-fluid w-75 text-center">
-        <label class="container-fluid mt-5 text-center h1" for="exampleInputEmail1">Group Code</label>
-        <input type="email" class="form-control mt-5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter group code">
+        <label
+          class="container-fluid mt-5 text-center h1"
+          for="exampleInputEmail1"
+          >Group Code</label
+        >
+        <input
+          type="email"
+          class="form-control mt-5"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter group code"
+        />
       </div>
       <div class="text-center">
-        <a href="group-picks.html" type="submit" class="btn btn-primary mt-5 text-center">Submit</a>
+        <a
+          href="group-picks.html"
+          type="submit"
+          class="btn btn-primary mt-5 text-center"
+          >Submit</a
+        >
       </div>
     </form>
 
@@ -72,27 +87,73 @@
         <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
         <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
         <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
-        <a class="btn fas fa-users fa-2x px-auto" href="group-use-preferences.html"></a>
+        <a
+          class="btn fas fa-users fa-2x px-auto"
+          href="group-use-preferences.html"
+        ></a>
         <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
       </div>
     </footer>
 
-    <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script
       src="https://kit.fontawesome.com/26da0e4274.js"
       crossorigin="anonymous"
     ></script>
 
-    <!--------------------------------------------------------------------->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+
+    <script src="scripts/firebase_api_phresh.js"></script>
+
     <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
+    <script>
+      function showGroupCollection() {
+        let count = 0;
+        db.collection("restaurants-list")
+          .get() //get whole collection
+          .then(function (snap) {
+            snap.forEach(function (doc) {
+              //cycle thru each doc
+              count++;
+
+              // do something with each document
+              var pic = doc.data().img; //key "picture"
+              var heading = doc.data().title; //key "name"
+              var bio = doc.data().description; //key "description"
+
+              // construct the string for card
+              var codestring =
+                '<div class="card mt-3 container-fluid">' +
+                '<img src="' +
+                pic +
+                '" class="card-img-top mt-3">' +
+                '<div class="card-body">' +
+                '<h5 class="card-title">' +
+                heading +
+                "</h5>" +
+                '<p class="card-text">' +
+                bio +
+                "</p>" +
+                '<div class="container-fluid text-center">' +
+                '<a href="dailyList-choice.html" type="button" class="btn btn-success text-center">Yes</a>' +
+                '<a type="button" class="btn btn-danger text-center">No</a>' +
+                "</div>" +
+                "</div>" +
+                "</div>";
+              // append with jquery to DOM
+              $("#cards-go-here").append(codestring);
+            });
+          });
+      }
+      showGroupCollection();
+    </script>
   </body>
 </html>
