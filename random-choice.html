@@ -10,31 +10,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
-
-  <link href="styles/random1.css" rel="stylesheet" />
   <link href="styles/template.css" rel="stylesheet" />
+  <link href="styles/dailyList-choice.css" rel="stylesheet" />
 
 </head>
 
 <body>
   <nav class="navbar bg-warning">
-    <div class="container-fluid" style="height: 100px;">
+    <div class="container-fluid">
       <div id="logo">
-        <img src="images/logo.png" alt="logo" style="height: 100px;" />
+        <img src="images/logo.png" alt="logo" />
       </div>
       <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
     </div>
   </nav>
 
-  <div class="container mt-2">
-    <h1 class="display-4">Random!</h1>
+  <div class="container-fluid mt-4">
+    <a href="random1.html" type="button" class="btn btn-info">Back</a>
   </div>
 
-  <div id="cardContainer">
-    <!-- Container for card  -->
-    <div id="restaurant-goes-here"></div>
-
+  <div id="details-go-here">
   </div>
+
 
   <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
     <div class="container py-3">
@@ -46,11 +43,15 @@
     </div>
   </footer>
 
+  <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
+  <!----------------------------------------------->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
+
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
   <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
 
   <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
@@ -59,50 +60,47 @@
 
   <script src="scripts/firebase_api_phresh.js"></script>
 
-
   <!-- JS files: Your own JavaScript functions included here    -->
   <script>
-    function displayRandomRestaurant() {
-      var randomNum = Math.floor(Math.random() * 5) + 1
+        function getDirections() {
+      const parsedUrl = new URL(window.location.href);
+      console.log(parsedUrl.searchParams.get("id"));
+
+      // extract id from url, assign to variable
+      var id = parsedUrl.searchParams.get("id");
+      console.log(id);
+
+      // use this ID to read from firestore
       db.collection("restaurants-list")
-        .where("id", ">=", randomNum)
-        .limit(1)
+        .doc(id)   // ID that we extracted
         .get()
-        .then(function (snap) {
-          snap.forEach(function (doc) {
-            var pic = doc.data().img;        
-            var heading = doc.data().title;       
-            var bio = doc.data().description;
-            var id = doc.id;
-            var restaurant = '<div class="card mt-3 container-fluid">'
-                      + '<img src="' + pic + '" class="card-img-top">'
-                      + '<div class="card-body">'
-                      + '<h5 class="card-title">' + heading + '</h5>'
-                      + '<p class="card-text">' + bio + '</p>'
-                      + '<div id="buttons">'
-                      + '<div class="container-fluid text-center">'
-                      + '<button id="pass" onclick="location.reload()" type="button" class="btn btn-primary">Pass</button>'
-                      + '<button id="' + id + '" type="button" class="btn btn-success text-center">Directions</button>'
-                      + '</div>'
-                      + '</div>'
-                      + '</div>'
-                      + '</div>';
-            $("#restaurant-goes-here").append(restaurant);
-            addDirectionListener(id)
-          })
+        .then(function (doc) {   // display details!
+          var heading = doc.data().title;       //key "name"
+          var bio = doc.data().description;     //key "description"
+          var direction = doc.data().location;
+          var googleAPIkey = "AIzaSyCrvQOtoZY8NHztTLD60XfklA_IwjZ9vEo"
+          var codestring =
+            '<div id="directions">'
+            + '<div class="container-fluid">'
+            + '<div class="card container-fluid">'
+            + direction
+            + '</div>'
+            + '</div>'
+            + '<div id="caption" class="mt-3">'
+            + '<h5>' + heading + '</h5>'
+            + '<p>' + bio + '</p>'
+            + '</div>'
+            + '</div>'
+            + '</div>';
+          $("#details-go-here").append(codestring);
+          console.log("location is " + location);
+
         })
     }
-    displayRandomRestaurant();
-
-    function addDirectionListener(id) {
-      document.getElementById(id)
-        .addEventListener("click", function () {
-          console.log(id + " was clicked!")
-          window.location.href = "random-choice.html?id=" + id;
-        });
-    }
-
+    getDirections();
   </script>
+
+
 </body>
 
 </html>

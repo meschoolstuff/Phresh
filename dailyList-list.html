@@ -66,7 +66,7 @@
   <!-- JS files: Your own JavaScript functions included here    -->
 
   <script>
-    function ShowCollection() { 
+    function ShowCollection() {
       firebase.auth().onAuthStateChanged(function (user) {
 
         // gets the list of all preferences for this user
@@ -85,21 +85,25 @@
                     var pic = doc.data().img;             //key "picture"
                     var heading = doc.data().title;       //key "name"
                     var bio = doc.data().description;     //key "description"
-                    var codestring = 
+                    var id = doc.id;
+                    var codestring =
                       '<div class="card mt-3 container-fluid">'
                       + '<img src="' + pic + '" class="card-img-top">'
                       + '<div class="card-body">'
                       + '<h5 class="card-title">' + heading + '</h5>'
                       + '<p class="card-text">' + bio + '</p>'
+                      + '<div id="buttons">'
                       + '<div class="container-fluid text-center">'
-                      + '<a href="dailyList-choice.html" type="button" class="btn btn-success text-center">Yes</a>'
-                      + '<a type="button" class="btn btn-danger text-center">No</a>'
+                      + '<button type="button" class="btn btn-danger text-center">No</button>'
+                      + '<button id="' + id + '" type="button" class="btn btn-success text-center">Directions</button>'
+                      + '</div>'
                       + '</div>'
                       + '</div>'
                       + '</div>';
 
                     // append with jquery to DOM
                     $("#cards-go-here").append(codestring);
+                    addDirectionListener(id)
                   })
                 }
               })
@@ -109,6 +113,15 @@
       })
     }
     ShowCollection();
+
+    function addDirectionListener(id) {
+      document.getElementById(id)
+        .addEventListener("click", function () {
+          console.log(id + " was clicked!")
+          window.location.href = "dailyList-choice.html?id=" + id;
+        });
+    }
+
   </script>
 </body>
 

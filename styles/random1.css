@@ -14,11 +14,23 @@
     width: 45%;
 }
 
-#cardContainer {
-    width: 90%;
-    margin: 0 auto;
+.card-body {
+    width: 105%;
+    margin-left: -0.4rem;
+    padding: 3%;
 }
 
-#cardContainer img {
+.card.container-fluid img {
     height: 248px;
+    margin-top: 4%;
 }
+
+.card.mt-3.container-fluid {
+    width: 355px;
+}
+
+#cardContainer {
+    margin: 0 auto;
+    margin-bottom: 13.5vh;
+}
+

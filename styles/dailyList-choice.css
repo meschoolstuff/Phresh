@@ -1,9 +1,13 @@
 
 #caption {
-    width: 94%;
+    width: 91%;
     margin: 0 auto;
 }
 
-#cardContainer {
-    margin-top: -2em;
+.container-fluid.mt-4 {
+    margin-bottom: -5vh;
+}
+
+.card.container-fluid {
+    background-color: #FFD1AA;
 }
