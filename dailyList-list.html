@@ -66,34 +66,47 @@
   <!-- JS files: Your own JavaScript functions included here    -->
 
   <script>
-    function ShowCollection() { //put choice in brackets
-      db.collection("restaurants-list")
-      // .where(choice, "==", true)
-        .get()                                    //get whole collection
-        .then(function (snap) {
-          snap.forEach(function (doc) {           //cycle thru each doc 
+    function ShowCollection() { 
+      firebase.auth().onAuthStateChanged(function (user) {
 
-            // do something with each document
-            var pic = doc.data().img;             //key "picture"
-            var heading = doc.data().title;       //key "name"
-            var bio = doc.data().description;     //key "description"
+        // gets the list of all preferences for this user
+        db.collection("users").doc(user.uid).get()
+          .then(function (snap) {
+            var prefs = snap.data().preferences; // key = preferences
+            console.log(prefs);
 
-            // construct the string for card
-            var codestring = '<div class="card mt-3 container-fluid">'
-              + '<img src="' + pic + '" class="card-img-top">'
-              + '<div class="card-body">'
-              + '<h5 class="card-title">' + heading + '</h5>'
-              + '<p class="card-text">' + bio + '</p>'
-              + '<div class="container-fluid text-center">'
-              + '<a href="dailyList-choice.html" type="button" class="btn btn-success text-center">Yes</a>'
-              + '<a type="button" class="btn btn-danger text-center">No</a>'
-              + '</div>'
-              + '</div>'
-              + '</div>';
-            // append with jquery to DOM
-            $("#cards-go-here").append(codestring);
+            // get a collection of all docs where "type" appears in preference array
+            db.collection("restaurants-list")
+              .where("type", "array-contains-any", prefs)
+              .get()
+              .then(function (doc) {
+                if (doc) {
+                  doc.forEach(function (doc) {
+                    var pic = doc.data().img;             //key "picture"
+                    var heading = doc.data().title;       //key "name"
+                    var bio = doc.data().description;     //key "description"
+                    var codestring = 
+                      '<div class="card mt-3 container-fluid">'
+                      + '<img src="' + pic + '" class="card-img-top">'
+                      + '<div class="card-body">'
+                      + '<h5 class="card-title">' + heading + '</h5>'
+                      + '<p class="card-text">' + bio + '</p>'
+                      + '<div class="container-fluid text-center">'
+                      + '<a href="dailyList-choice.html" type="button" class="btn btn-success text-center">Yes</a>'
+                      + '<a type="button" class="btn btn-danger text-center">No</a>'
+                      + '</div>'
+                      + '</div>'
+                      + '</div>';
+
+                    // append with jquery to DOM
+                    $("#cards-go-here").append(codestring);
+                  })
+                }
+              })
+
           })
-        })
+
+      })
     }
     ShowCollection();
   </script>

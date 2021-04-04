@@ -107,7 +107,7 @@
             </div>
         </div>
 
-        <button type="button" id="finish" class="btn btn-dark container-fluid mt-4">Finish</button>
+        <button type="button" id="save" class="btn btn-dark container-fluid mt-4">Save</button>
 
         <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
             <div class="container py-3">
@@ -145,8 +145,7 @@
         <!--Saves the user's settings-->
         <script>
             function getFormInputs() {
-                document.getElementById("finish").addEventListener('click', function () {
-                    firebase.auth().onAuthStateChanged(function (user) {
+                document.getElementById("save").addEventListener('click', function () {
 
                         // Either true or false
                         var fastFood = document.getElementById("fast").checked;
@@ -155,15 +154,31 @@
                         var seafood = document.getElementById("sea").checked;
                         var vegetarian = document.getElementById("vegeta").checked;
 
+                        // put preferences into an array
+                        var preferences = [];
+                        if (fastFood) {
+                            preferences.push("fastfood");
+                        }
+
+                        if (asianFood) {
+                        preferences.push("asianfood");
+                        }
+
+                        if (americanFood) {
+                            preferences.push("americanfood");
+                        }
+                        if (seafood) {
+                            preferences.push("seafood");
+                        }
+                        if (vegetarian) {
+                        preferences.push("vegetarian");
+                        }
+
+                        firebase.auth().onAuthStateChanged(function (user) {
                         db.collection("users")
                             .doc(user.uid)
-                            .collection("preferences-list")
-                            .add({
-                                "Fast Food": fastFood,              //fast food + asian food
-                                "Asian Food": asianFood,            //from checkbox
-                                "American Food": americanFood,      //from checkbox
-                                "Seafood": seafood,                 //from checkbox
-                                "Vegetarian": vegetarian            //from checkbox
+                            .update({
+                                "preferences": preferences
                             })
 
                             //.then(function () {

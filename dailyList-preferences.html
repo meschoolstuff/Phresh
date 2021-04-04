@@ -105,18 +105,17 @@
             </div>
         </div>
 
-        <a href="dailyList-list.html" type="button" id="finish" class="btn btn-dark container-fluid mt-4">Finish</a>
-
+        <button type="button" id="finish" class="btn btn-dark container-fluid mt-4">Finish</button>
 
         <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
             <div class="container py-3">
-              <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
-              <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
-              <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
-              <a class="btn fas fa-users fa-2x px-auto" href="group-use-preferences.html"></a>
-              <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
+                <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
+                <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
+                <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
+                <a class="btn fas fa-users fa-2x px-auto" href="group-use-preferences.html"></a>
+                <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
             </div>
-          </footer>
+        </footer>
 
         <!----------------------------------------------->
         <!-- JS: Boostrap, Firebase, API related    -->
@@ -137,34 +136,56 @@
 
         <!-- JS files: Your own JavaScript functions included here    -->
         <script>
+
+            document.getElementById("finish").addEventListener('click', function () {
+                getFormInputs();
+                newPage();
+            });
+
             function getFormInputs() {
-                document.getElementById("finish").addEventListener('click', function () {
-                    firebase.auth().onAuthStateChanged(function (user) {
+                // Either true or false
+                var fastFood = document.getElementById("fast").checked;
+                var asianFood = document.getElementById("asian").checked;
+                var americanFood = document.getElementById("american").checked;
+                var seafood = document.getElementById("sea").checked;
+                var vegetarian = document.getElementById("vegeta").checked;
 
-                        // Either true or false
-                        var fastFood = document.getElementById("fast").checked;
-                        var asianFood = document.getElementById("asian").checked;
-                        var americanFood = document.getElementById("american").checked;
-                        var seafood = document.getElementById("sea").checked;
-                        var vegetarian = document.getElementById("vegeta").checked;
+                // put preferences into an array
+                var preferences = [];
+                if (fastFood) {
+                    preferences.push("fastfood");
+                }
 
-                        db.collection("users")
-                            .doc(user.uid)
-                            .collection("preferences-list")
-                            .add({
-                                "Fast Food": fastFood,   //from checkbox
-                                "Asian Food": asianFood,     //from checkbox
-                                "American Food": americanFood,      //from checkbox
-                                "Seafood": seafood,     //from checkbox
-                                "Vegetarian": vegetarian      //from checkbox
-                            })
-                    })
+                if (asianFood) {
+                    preferences.push("asianfood");
+                }
+
+                if (americanFood) {
+                    preferences.push("americanfood");
+                }
+                if (seafood) {
+                    preferences.push("seafood");
+                }
+                if (vegetarian) {
+                    preferences.push("vegetarian");
+                }
+
+                firebase.auth().onAuthStateChanged(function (user) {
+                    db.collection("users")
+                        .doc(user.uid)
+                        .update({
+                            "preferences": preferences
+                        })
                 })
             }
             getFormInputs();
+
+            function newPage() {
+                location.href = "dailyList-list.html"
+            }
+
+
         </script>
-
-
 </body>
 
 </html>
