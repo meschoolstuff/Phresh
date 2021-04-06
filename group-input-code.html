@@ -48,39 +48,25 @@
           >Group Code</label
         >
         <input
-          type="email"
+          type="text"
           class="form-control mt-5"
-          id="exampleInputEmail1"
+          id="groupCode"
           aria-describedby="emailHelp"
           placeholder="Enter group code"
         />
       </div>
       <div class="text-center">
-        <a
-          href="group-picks.html"
-          type="submit"
+        <button
+          id="submit" 
           class="btn btn-primary mt-5 text-center"
-          >Submit</a
+          onclick="return readInput()"
         >
+          Submit
+        </button>
       </div>
     </form>
 
-    <!-- <div class="d-grid gap-4 mt-5">
-      <div class="card w-75 container-fluid text-center">
-        <div class="card-body">
-          <h5 class="card-title">Enter the Group Code!</h5>
-          <br />
-        </div>
-      </div>
-
-      <div class="card w-50 container-fluid text-center">
-        <div class="card-body"></div>
-      </div>
-
-      <div class="container-fluid text-center">
-        <button type="button" class="btn btn-info">Join!</button>
-      </div>
-    </div> -->
+    <div id="error-message"></div>
 
     <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
       <div class="container py-3">
@@ -114,46 +100,51 @@
     <script src="scripts/firebase_api_phresh.js"></script>
 
     <!-- JS files: Your own JavaScript functions included here    -->
+
     <script>
-      function showGroupCollection() {
-        let count = 0;
-        db.collection("restaurants-list")
-          .get() //get whole collection
-          .then(function (snap) {
-            snap.forEach(function (doc) {
-              //cycle thru each doc
-              count++;
+      var count = 0;
 
-              // do something with each document
-              var pic = doc.data().img; //key "picture"
-              var heading = doc.data().title; //key "name"
-              var bio = doc.data().description; //key "description"
+      function readInput() {
+        var input = document.getElementById("groupCode").value;
+        console.log(input);
 
-              // construct the string for card
-              var codestring =
-                '<div class="card mt-3 container-fluid">' +
-                '<img src="' +
-                pic +
-                '" class="card-img-top mt-3">' +
-                '<div class="card-body">' +
-                '<h5 class="card-title">' +
-                heading +
-                "</h5>" +
-                '<p class="card-text">' +
-                bio +
-                "</p>" +
-                '<div class="container-fluid text-center">' +
-                '<a href="dailyList-choice.html" type="button" class="btn btn-success text-center">Yes</a>' +
-                '<a type="button" class="btn btn-danger text-center">No</a>' +
-                "</div>" +
-                "</div>" +
-                "</div>";
-              // append with jquery to DOM
-              $("#cards-go-here").append(codestring);
-            });
+        var roomRef = db.collection("rooms").doc("" + input);
+
+        roomRef
+          .get()
+          .then((doc) => {
+            if (doc.exists) {
+              var id = "" + input;
+              console.log("Document data:", doc.data());
+              console.log("exists!");
+              addSubmitListener(id);
+            } else if (count == 0) {
+              // doc.data() will be undefined in this case
+              printErrorMessage();
+              console.log("No such document!");
+              count = 1;
+            }
+          })
+          .catch((error) => {
+            console.log("Error getting document:", error);
           });
+
+        return false;
       }
-      showGroupCollection();
+
+      function addSubmitListener(id) {
+        // document.getElementById("submit").addEventListener("click", function () {
+          console.log(id + "was clicked!");
+          //   window.location.href="details.html";
+          window.location.href = "group-picks.html?id=" + id;
+        // });
+      }
+
+      function printErrorMessage() {
+        $("#error-message").append(
+          "<label class='container-fluid mt-5 text-center text-danger h3'>Group Code Does Not Exist!</label>"
+        );
+      }
     </script>
   </body>
 </html>
