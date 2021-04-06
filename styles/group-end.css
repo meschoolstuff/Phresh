@@ -1,0 +1,25 @@
+p {
+    font-size: 11pt;
+}
+
+.card-body {
+    width: 108%;
+    margin-left: -0.6rem;
+}
+
+.carousel-item {
+    height: 600px;
+}
+
+.card.container-fluid img {
+    height: 245px;
+}
+
+#cardContainer {
+    width: 360px;
+    margin: 0 auto;
+}
+
+#cardContainer a {
+    margin: 2%;
+}
