@@ -6,7 +6,6 @@
     margin-top: 5vh;
 }
 
-#preferences {
-    height: 100px;
-    width: 500px;
+.btn.btn-dark.container-fluid.mt-4 {
+    margin-bottom: 14vh;
 }
