@@ -111,18 +111,26 @@
         var max = Number.MIN_VALUE;
         var position = 0;
 
-        db.collection("rooms").document(id).get().then(function (doc){
+        db.collection("rooms")
+          .document(id)
+          .get()
+          .then(function (doc) {
             if (doc) {
-                doc.forEach(function (doc) {
-                    var one = data();
-                    console.log(one);
-                })
+              doc.forEach(function (doc) {
+                var one = data();
+                console.log(one);
+              });
             }
-        })
+          });
 
-        var liked = db.collection("rooms").doc(id).orderByValue().limitToLast(1);
-            db
-          .collection("restaurants-list")
+        db
+          .collection("rooms")
+          .orderBy("")
+          .limitToLast(1).get().then(function (snap) {
+              snap.forEach()
+          });
+
+        db.collection("restaurants-list")
           .where("id", "==", liked)
           .get()
           .then(function (doc) {
