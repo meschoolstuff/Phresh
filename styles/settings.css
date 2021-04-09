@@ -1,3 +1,12 @@
 .btn.btn-danger {
     float: right;
 }
+
+.list-group {
+    margin-top: 5vh;
+}
+
+#preferences {
+    height: 100px;
+    width: 500px;
+}

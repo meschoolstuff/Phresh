@@ -36,6 +36,13 @@
             </div>
         </div>
 
+        <ul class="list-group">
+            <li class="list-group-item"><span>Name: </span><span id="name-here"></span></li>
+            <li class="list-group-item">Email: <span id="email-here"></span></li>
+            <li class="list-group-item">Group Code: <span id="groupCode-here"></span></li>
+          </ul>
+ 
+ 
         <div id="preferences">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -70,7 +77,6 @@
                         <label class="form-check-label"> Vegetarian </label>
                         <br>
                     </div>
-
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="checkboxes">
@@ -147,34 +153,34 @@
             function getFormInputs() {
                 document.getElementById("save").addEventListener('click', function () {
 
-                        // Either true or false
-                        var fastFood = document.getElementById("fast").checked;
-                        var asianFood = document.getElementById("asian").checked;
-                        var americanFood = document.getElementById("american").checked;
-                        var seafood = document.getElementById("sea").checked;
-                        var vegetarian = document.getElementById("vegeta").checked;
+                    // Either true or false
+                    var fastFood = document.getElementById("fast").checked;
+                    var asianFood = document.getElementById("asian").checked;
+                    var americanFood = document.getElementById("american").checked;
+                    var seafood = document.getElementById("sea").checked;
+                    var vegetarian = document.getElementById("vegeta").checked;
 
-                        // put preferences into an array
-                        var preferences = [];
-                        if (fastFood) {
-                            preferences.push("fastfood");
-                        }
+                    // put preferences into an array
+                    var preferences = [];
+                    if (fastFood) {
+                        preferences.push("fastfood");
+                    }
 
-                        if (asianFood) {
+                    if (asianFood) {
                         preferences.push("asianfood");
-                        }
+                    }
 
-                        if (americanFood) {
-                            preferences.push("americanfood");
-                        }
-                        if (seafood) {
-                            preferences.push("seafood");
-                        }
-                        if (vegetarian) {
+                    if (americanFood) {
+                        preferences.push("americanfood");
+                    }
+                    if (seafood) {
+                        preferences.push("seafood");
+                    }
+                    if (vegetarian) {
                         preferences.push("vegetarian");
-                        }
+                    }
 
-                        firebase.auth().onAuthStateChanged(function (user) {
+                    firebase.auth().onAuthStateChanged(function (user) {
                         db.collection("users")
                             .doc(user.uid)
                             .update({
@@ -184,6 +190,28 @@
                 })
             }
             getFormInputs();
+
+            function displayUserInfo() {
+                firebase.auth().onAuthStateChanged(function (somebody) {
+                    if (somebody) {
+                        console.log(somebody.uid);
+                        db.collection("users")
+                            .doc(somebody.uid)
+                            .get()                      // Read!
+                            .then(function (doc) {
+                                // console.log(doc.data().name);
+                                var a = doc.data().name;
+                                var b = doc.data().email;
+                                var c = doc.data().groupCode;
+                                $("#name-here").text(a);
+                                $("#email-here").text(b);
+                                $("#groupCode-here").text(c);
+
+                            })
+                    }
+                })
+            }
+            displayUserInfo();
         </script>
 
         <!-- logout functionality -->
