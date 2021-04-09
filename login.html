@@ -96,6 +96,10 @@
                   groupCode: timeStamp,
                 })
                 .then(function() {
+                  db.collection("rooms").doc(timeStamp + "").collection("votes").add({
+                    
+                  })
+                  // change this!
                   console.log("New user added to firestore");
                   db.collection("rooms").doc(timeStamp + "").set({
                     1: 0,
