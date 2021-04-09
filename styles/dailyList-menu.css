@@ -2,3 +2,8 @@
     width: 18rem;
     margin-top: 7rem;
 }
+
+div button {
+    margin: 0 2% 2% 2%;
+    width: 45%;
+}
