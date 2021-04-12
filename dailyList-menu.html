@@ -1,70 +1,95 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Phresh</title>
     <meta name="comp1800 boilerplate code" content="my bcit project" />
     <meta name="author" content="BCIT" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
 
     <link href="styles/template.css" rel="stylesheet" />
     <link href="styles/dailyList-menu.css" rel="stylesheet" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <nav class="navbar bg-warning">
-        <div class="container-fluid">
-          <div id="logo">
-            <img src="images/logo.png" alt="logo"/>
-          </div>
-          <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
+      <div class="container-fluid">
+        <div id="logo">
+          <img src="images/logo.png" alt="logo" />
         </div>
-      </nav>
+        <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
+      </div>
+    </nav>
 
     <div class="container">
-        <div id="sectionTitle">
-          <h1 class="display-4">Daily List</h1>
-          <div class="container-fluid mt-1">
-            <a href="main.html" type="button" class="btn btn-info">Back</a>
-          </div>
+      <div id="sectionTitle">
+        <h1 class="display-4">Daily List</h1>
+        <div class="container-fluid mt-1">
+          <a href="main.html" type="button" class="btn btn-info">Back</a>
         </div>
       </div>
+    </div>
 
-        <div class="card mx-auto">
-            <div class="card-body">
-                <h5 class="card-title text-center">Would you like to use your saved preferences?</h5>
-                <div class="container-fluid text-center mt-4">
-                    <a href="dailyList-list.html" type="button" class="btn btn-success text-center">Yes</a>
-                    <a href="dailyList-preferences.html" type="button" class="btn btn-danger text-center">No</a>
-                  </div>
-            </div>
+    <div class="card mx-auto">
+      <div class="card-body">
+        <h5 class="card-title text-center">
+          Would you like to use your saved preferences?
+        </h5>
+        <div class="container-fluid text-center mt-4">
+          <a
+            href="dailyList-list.html"
+            type="button"
+            class="btn btn-success text-center"
+            >Yes</a
+          >
+          <a
+            href="dailyList-preferences.html"
+            type="button"
+            class="btn btn-danger text-center"
+            >No</a
+          >
         </div>
-        
-        <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
-          <div class="container py-3">
-            <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
-            <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
-            <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
-            <a class="btn fas fa-users fa-2x px-auto" href="group-use-preferences.html"></a>
-            <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
-          </div>
-        </footer>
-      
-        <!----------------------------------------------->
-        <!-- JS: Boostrap, Firebase, API related    -->
-        <!----------------------------------------------->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-          crossorigin="anonymous"></script>
+      </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-      
-        <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
-</body>
+    <!--footer-->
+    <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
+      <div class="container py-3">
+        <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
+        <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
+        <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
+        <a
+          class="btn fas fa-users fa-2x px-auto"
+          href="group-host-join.html"
+        ></a>
+        <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
+      </div>
+    </footer>
 
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related    -->
+    <!----------------------------------------------->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/26da0e4274.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -1,81 +1,104 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Phresh</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project" />
+    <meta name="author" content="BCIT" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Phresh</title>
-  <meta name="comp1800 boilerplate code" content="my bcit project" />
-  <meta name="author" content="BCIT" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css"
+    />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <link href="styles/index.css" rel="stylesheet" />
+  </head>
 
-  <link href="styles/index.css" rel="stylesheet" />
-</head>
-
-<body>
-  <nav class="navbar bg-warning">
-    <div class="container-fluid" style="height: 100px;">
-      <div id="logo">
-        <img src="images/logo.png" alt="logo" style="height: 100px;" />
+  <body>
+    <!--sets the header with the logo and name-->
+    <nav class="navbar bg-warning">
+      <div class="container-fluid" style="height: 100px">
+        <div id="logo">
+          <img src="images/logo.png" alt="logo" style="height: 100px" />
+        </div>
+        <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
       </div>
-      <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
-    </div>
-  </nav>
+    </nav>
 
-  <div class="container">
-    <h3 class="display-4 mt-3">Welcome <span id="name-goes-here"></span>!</h3>
-  </div>
+    <!--custom welcome message-->
+    <div class="container">
+      <h3 class="display-4 mt-3">Welcome <span id="name-goes-here"></span>!</h3>
+    </div>
 
-  <div id="button-container">
-    <div class="container text-center">
-      <a id="test2" href="dailyList-menu.html" class="btn">
-        <i class="btn fas fa-list fa-2x"></i><b>Daily List</b></a>
+    <!--container for the buttons of the different modes-->
+    <div id="button-container">
+      <div class="container text-center">
+        <a id="test2" href="dailyList-menu.html" class="btn">
+          <i class="btn fas fa-list fa-2x"></i><b>Daily List</b></a
+        >
+      </div>
+      <div class="container text-center">
+        <a id="test3" href="random1.html" class="btn">
+          <i class="btn fas fa-dice fa-2x"></i><b>Random</b></a
+        >
+      </div>
+      <div class="container text-center">
+        <a id="test4" href="group-host-join.html" class="btn">
+          <i class="btn fas fa-users fa-2x"></i><b>Group Mode</b></a
+        >
+      </div>
     </div>
-    <div class="container text-center">
-      <a id="test3" href="random1.html" class="btn">
-        <i class="btn fas fa-dice fa-2x"></i><b>Random</b></a>
-    </div>
-    <div class="container text-center">
-      <a id="test4" href="group-use-preferences.html" class="btn">
-        <i class="btn fas fa-users fa-2x"></i><b>Group Mode</b></a>
-    </div>
-  </div>
 
-  <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
-    <div class="container py-3">
-      <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
-      <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
-      <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
-      <a class="btn fas fa-users fa-2x px-auto" href="group-use-preferences.html"></a>
-      <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
-    </div>
-  </footer>
+    <!--footer-->
+    <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
+      <div class="container py-3">
+        <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
+        <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
+        <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
+        <a
+          class="btn fas fa-users fa-2x px-auto"
+          href="group-host-join.html"
+        ></a>
+        <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
+      </div>
+    </footer>
 
-  <!----------------------------------------------->
-  <!-- JS: Boostrap, Firebase, API related, JQuery    -->
-  <!----------------------------------------------->
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related, JQuery    -->
+    <!----------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
 
-  <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/26da0e4274.js"
+      crossorigin="anonymous"
+    ></script>
 
-   <!-- Link to the api keys for your firebase project -->
-  <script src="scripts/firebase_api_phresh.js"></script>
-  
+    <!-- Link to the api keys for your firebase project -->
+    <script src="scripts/firebase_api_phresh.js"></script>
 
-  <!--------------------------------------------------------------------->
-  <!-- JS files: Your own JavaScript functions included here    -->
-  <!--------------------------------------------------------------------->
-  <script src="scripts/my_functions.js"></script>
-</body>
-
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+    <script src="scripts/my_functions.js"></script>
+  </body>
 </html>
