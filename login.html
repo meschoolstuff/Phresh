@@ -27,6 +27,7 @@
   </head>
 
   <body>
+    <!--sets the header with the logo and name-->
     <nav class="navbar bg-warning">
       <div class="container-fluid" style="height: 100px">
         <div id="logo">
@@ -36,6 +37,7 @@
       </div>
     </nav>
 
+    <!--container that holds the log-in box-->
     <div class="container">
       <h1 class="display-4">Welcome !</h1>
       <h1>Lets get you logged in ...</h1>
@@ -96,17 +98,28 @@
                   groupCode: timeStamp,
                 })
                 .then(function() {
-                  db.collection("rooms").doc(timeStamp + "").collection("votes").add({
-                    
+                  db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r1").set({
+                    value: 0,
+                    id: 1
                   })
-                  // change this!
-                  console.log("New user added to firestore");
+                  db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r2").set({
+                    value: 0,
+                    id: 2
+                  })
+                  db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r3").set({
+                    value: 0,
+                    id: 3
+                  })
+                  db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r4").set({
+                    value: 0,
+                    id: 4
+                  })
+                  db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r5").set({
+                    value: 0,
+                    id: 5
+                  })
                   db.collection("rooms").doc(timeStamp + "").set({
-                    1: 0,
-                    2: 0,
-                    3: 0,
-                    4: 0,
-                    5: 0
+                    current_winner: 0
                   })
                 })
                 .then(function () {

@@ -113,7 +113,7 @@
               $("#restaurant-image").attr("src", pic);
               triggerNext(resId);
             })
-          
+
       }
 
       function showNextCollection() {
@@ -204,40 +204,40 @@
         $("#yes-button").on('click', function () {
           console.log("yes was clicked");
           if (count == 1) {
-            db.collection("rooms").doc(id).update({
-              1: firebase.firestore.FieldValue.increment(1),
+            db.collection("rooms").doc(id).collection("votes").doc("r1").update({
+              value: firebase.firestore.FieldValue.increment(1),
             });
             $("#yes-button").unbind();
             $("#no-button").unbind();
             showNextCollection()
           }
           else if (count == 2) {
-            db.collection("rooms").doc(id).update({
-              2: firebase.firestore.FieldValue.increment(1),
+            db.collection("rooms").doc(id).collection("votes").doc("r2").update({
+              value: firebase.firestore.FieldValue.increment(1),
             });
             $("#yes-button").unbind();
             $("#no-button").unbind();
             showNextCollection()
           }
           else if (count == 3) {
-            db.collection("rooms").doc(id).update({
-              3: firebase.firestore.FieldValue.increment(1),
+            db.collection("rooms").doc(id).collection("votes").doc("r3").update({
+              value: firebase.firestore.FieldValue.increment(1),
             });
             $("#yes-button").unbind();
             $("#no-button").unbind();
             showNextCollection()
           }
           else if (count == 4) {
-            db.collection("rooms").doc(id).update({
-              4: firebase.firestore.FieldValue.increment(1),
+            db.collection("rooms").doc(id).collection("votes").doc("r4").update({
+              value: firebase.firestore.FieldValue.increment(1),
             });
             $("#yes-button").unbind();
             $("#no-button").unbind();
             showNextCollection()
           }
           else if (count == 5) {
-            db.collection("rooms").doc(id).update({
-              5: firebase.firestore.FieldValue.increment(1),
+            db.collection("rooms").doc(id).collection("votes").doc("r5").update({
+              value: firebase.firestore.FieldValue.increment(1),
             });
             $("#yes-button").unbind();
             $("#no-button").unbind();
@@ -248,47 +248,72 @@
         $("#no-button").on('click', function () {
           console.log("no was clicked");
           if (count == 1) {
-            db.collection("rooms").doc(id).update({
-              1: firebase.firestore.FieldValue.increment(-1),
+            db.collection("rooms").doc(id).collection("votes").doc("r1").update({
+              value: firebase.firestore.FieldValue.increment(-1),
             });
             $("#no-button").unbind();
             $("#yes-button").unbind();
             showNextCollection()
           }
           else if (count == 2) {
-            db.collection("rooms").doc(id).update({
-              2: firebase.firestore.FieldValue.increment(-1),
+            db.collection("rooms").doc(id).collection("votes").doc("r2").update({
+              value: firebase.firestore.FieldValue.increment(-1),
             });
             $("#no-button").unbind();
             $("#yes-button").unbind();
             showNextCollection()
           }
           else if (count == 3) {
-            db.collection("rooms").doc(id).update({
-              3: firebase.firestore.FieldValue.increment(-1),
+            db.collection("rooms").doc(id).collection("votes").doc("r3").update({
+              value: firebase.firestore.FieldValue.increment(-1),
             });
             $("#no-button").unbind();
             $("#yes-button").unbind();
             showNextCollection()
           }
           else if (count == 4) {
-            db.collection("rooms").doc(id).update({
-              4: firebase.firestore.FieldValue.increment(-1),
+            db.collection("rooms").doc(id).collection("votes").doc("r4").update({
+              value: firebase.firestore.FieldValue.increment(-1),
             });
             $("#no-button").unbind();
             $("#yes-button").unbind();
             showNextCollection()
           }
           else if (count == 5) {
-            db.collection("rooms").doc(id).update({
-              5: firebase.firestore.FieldValue.increment(-1),
+            db.collection("rooms").doc(id).collection("votes").doc("r5").update({
+              value: firebase.firestore.FieldValue.increment(-1),
             });
             $("#no-button").unbind();
             $("#yes-button").unbind();
-            window.location.href = "group-end.html?id=" + id;
+            calculateWin(id)
+            
           }
         });
 
+      }
+
+      // function calculateWin(id) {
+      //   db.collection("rooms").doc(id).collection("votes").orderBy("value").limit(1).get().then(function(doc) {
+      //     var highest = doc.data().id;
+      //     console.log(highest);
+      //     db.collection("rooms").doc(id).set({
+      //       current_winner: highest
+      //     })
+      //     window.location.href = "group-end.html?id=" + id;
+      //   })
+      // }
+
+      function calculateWin(id) {
+        db.collection("rooms").doc(id).collection("votes").orderBy("value", "desc").limit(1).get().then(function(snap) {
+          snap.forEach(function(doc) {
+            var highest = doc.data().id;
+            console.log(highest);
+            db.collection("rooms").doc(id).update({
+              current_winner: highest
+            })
+          })
+          window.location.href = "group-end.html?id=" + id;
+        })
       }
       showGroupCollection();
     </script>
