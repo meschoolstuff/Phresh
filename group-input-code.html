@@ -18,15 +18,12 @@
       crossorigin="anonymous"
     />
 
-    <!-- Optional styles and scripts of your own -->
+    <!-- Scripts -->
     <link href="styles/group-input-code.css" rel="stylesheet" />
   </head>
 
   <body>
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
-
+    <!--sets the header with the logo and name-->
     <nav class="navbar bg-warning">
       <div class="container-fluid" style="height: 100px">
         <div id="logo">
@@ -36,10 +33,12 @@
       </div>
     </nav>
 
+    <!--back to group-host-join.html-->
     <div class="container-fluid me-5 mt-5">
       <a href="group-host-join.html" type="button" class="btn btn-info">Back</a>
     </div>
 
+    <!--form to input the host's code-->
     <form>
       <div class="form-group container-fluid w-75 text-center">
         <label
@@ -57,7 +56,7 @@
       </div>
       <div class="text-center">
         <button
-          id="submit" 
+          id="submit"
           class="btn btn-primary mt-5 text-center"
           onclick="return readInput()"
         >
@@ -66,6 +65,7 @@
       </div>
     </form>
 
+    <!--error message if input wrong code-->
     <div id="error-message"></div>
 
     <!--footer-->
@@ -98,19 +98,23 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 
+    <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebase_api_phresh.js"></script>
 
     <!-- JS files: Your own JavaScript functions included here    -->
 
     <script>
+      // variable to make sure the error message only comes up once
       var count = 0;
 
+      // listens to the submit button and reads the user input
       function readInput() {
         var input = document.getElementById("groupCode").value;
         console.log(input);
 
         var roomRef = db.collection("rooms").doc("" + input);
 
+        // sends the room id to addSubmitListener() function if exists
         roomRef
           .get()
           .then((doc) => {
@@ -120,7 +124,6 @@
               console.log("exists!");
               addSubmitListener(id);
             } else if (count == 0) {
-              // doc.data() will be undefined in this case
               printErrorMessage();
               console.log("No such document!");
               count = 1;
@@ -133,14 +136,13 @@
         return false;
       }
 
+      // function that redirects user to voting room
       function addSubmitListener(id) {
-        // document.getElementById("submit").addEventListener("click", function () {
-          console.log(id + "was clicked!");
-          //   window.location.href="details.html";
-          window.location.href = "group-picks.html?id=" + id;
-        // });
+        console.log(id + "was clicked!");
+        window.location.href = "group-picks.html?id=" + id;
       }
 
+      // function to print the error message
       function printErrorMessage() {
         $("#error-message").append(
           "<label class='container-fluid mt-5 text-center text-danger h3'>Group Code Does Not Exist!</label>"

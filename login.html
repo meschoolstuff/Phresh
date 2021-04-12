@@ -6,6 +6,7 @@
     <meta name="comp1800 boilerplate code" content="my bcit project" />
     <meta name="author" content="BCIT" />
 
+    <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -23,6 +24,7 @@
       href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css"
     />
 
+    <!-- Scripts -->
     <link href="styles/login.css" rel="stylesheet" />
   </head>
 
@@ -91,7 +93,6 @@
             var user = authResult.user;
             var timeStamp = Date.now();
 
-            
             if (authResult.additionalUserInfo.isNewUser) {
               //if new user
               db.collection("users")
@@ -103,30 +104,52 @@
                   groupCode: timeStamp,
                 })
                 // set up a group mode room when the user is created
-                .then(function() {
-                  db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r1").set({
-                    value: 0,
-                    id: 1
-                  })
-                  db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r2").set({
-                    value: 0,
-                    id: 2
-                  })
-                  db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r3").set({
-                    value: 0,
-                    id: 3
-                  })
-                  db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r4").set({
-                    value: 0,
-                    id: 4
-                  })
-                  db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r5").set({
-                    value: 0,
-                    id: 5
-                  })
-                  db.collection("rooms").doc(timeStamp + "").set({
-                    current_winner: 0
-                  })
+                .then(function () {
+                  db.collection("rooms")
+                    .doc(timeStamp + "")
+                    .collection("votes")
+                    .doc("r1")
+                    .set({
+                      value: 0,
+                      id: 1,
+                    });
+                  db.collection("rooms")
+                    .doc(timeStamp + "")
+                    .collection("votes")
+                    .doc("r2")
+                    .set({
+                      value: 0,
+                      id: 2,
+                    });
+                  db.collection("rooms")
+                    .doc(timeStamp + "")
+                    .collection("votes")
+                    .doc("r3")
+                    .set({
+                      value: 0,
+                      id: 3,
+                    });
+                  db.collection("rooms")
+                    .doc(timeStamp + "")
+                    .collection("votes")
+                    .doc("r4")
+                    .set({
+                      value: 0,
+                      id: 4,
+                    });
+                  db.collection("rooms")
+                    .doc(timeStamp + "")
+                    .collection("votes")
+                    .doc("r5")
+                    .set({
+                      value: 0,
+                      id: 5,
+                    });
+                  db.collection("rooms")
+                    .doc(timeStamp + "")
+                    .set({
+                      current_winner: 0,
+                    });
                 })
                 .then(function () {
                   window.location.assign("main.html"); //re-direct to main.html after signup
