@@ -27,3 +27,8 @@ p {
 #back {
     background-color: peachpuff;
 }
+
+.card.mt-3.container-fluid {
+    width: 355px;
+    background-color: #FFD1AA;
+}

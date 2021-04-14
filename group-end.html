@@ -5,6 +5,8 @@
     <title>Phresh</title>
     <meta name="comp1800 boilerplate code" content="my bcit project" />
     <meta name="author" content="BCIT" />
+
+    <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -16,6 +18,7 @@
       crossorigin="anonymous"
     />
 
+    <!-- Scripts -->
     <link href="styles/template.css" rel="stylesheet" />
     <link href="styles/group-end.css" rel="stylesheet" />
   </head>
@@ -30,20 +33,14 @@
       </div>
     </nav>
 
+    <!--title of the page-->
     <div class="container">
       <div id="sectionTitle">
-        <h1 class="display-4">Here's Your Result!</h1>
-        <!-- <div class="container-fluid mt-1">
-          <a
-            href="group-use-preferences.html"
-            type="button"
-            class="btn btn-info"
-            >Back</a
-          >
-        </div> -->
+        <h1 class="display-4">Here's The Leader!</h1>
       </div>
     </div>
 
+    <!--card contains the restaurant result-->
     <div id="cardContainer">
       <div id="group-cards-go-here">
         <div class="card mt-3 container-fluid">
@@ -51,17 +48,6 @@
           <div class="card-body">
             <h5 id="heading" class="card-title"></h5>
             <p id="bio" class="card-text"></p>
-            <!-- <div class="container-fluid text-center">
-              <button
-                id="yes-button"
-                class="btn btn-success text-center"
-              >
-                Yes
-              </button>
-              <button id="no-button" class="btn btn-danger text-center">
-                No
-              </button>
-            </div> -->
           </div>
         </div>
       </div>
@@ -93,11 +79,28 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 
+    <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebase_api_phresh.js"></script>
 
     <!-- JS files: Your own JavaScript functions included here    -->
     <script>
-      function showEndCollection() {
+      function displayDetails(rid) {
+        db.collection("restaurants-list")
+          .where("id", "==", rid)
+          .onSnapshot(function (snap) {
+            snap.forEach(function (doc) {
+              var pic = doc.data().img; //key "picture"
+              var heading = doc.data().title; //key "name"
+              var bio = doc.data().description; //key "description"
+
+              $("#heading").text(heading);
+              $("#bio").text(bio);
+              $("#restaurant-image").attr("src", pic);
+            });
+          });
+      }
+
+      function getCurrentWinner() {
         // https://some.site/?id=123 just for reference. not using
         const parsedUrl = new URL(window.location.href);
         console.log(parsedUrl.searchParams.get("id")); // "123"
@@ -105,41 +108,17 @@
         // extract id from url, assign to variable
         var id = parsedUrl.searchParams.get("id");
 
-        var max = Number.MIN_VALUE;
-        var position = 0;
-
         db.collection("rooms")
-          .document(id)
-          .get()
-          .then(function (doc) {
-            if (doc) {
-              doc.forEach(function (doc) {
-                var one = data();
-                console.log(one);
-              });
-            }
-          });
-
-        db
-          .collection("rooms")
-          .orderBy("")
-          .limitToLast(1).get().then(function (snap) {
-              snap.forEach()
-          });
-
-        db.collection("restaurants-list")
-          .where("id", "==", liked)
-          .get()
-          .then(function (doc) {
-            var pic = doc.data().img; //key "picture"
-            var heading = doc.data().title; //key "name"
-            var bio = doc.data().description; //key "description"
-
-            $("#heading").text(heading);
-            $("#bio").text(bio);
-            $("#restaurant-image").attr("src", pic);
+          .doc(id)
+          .onSnapshot(function (doc) {
+            var winner = doc.data().current_winner;
+            console.log(winner);
+            displayDetails(winner);
           });
       }
+
+      // run the function
+      getCurrentWinner();
     </script>
   </body>
 </html>
