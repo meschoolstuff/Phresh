@@ -28,3 +28,11 @@ p {
     width: 355px;
     background-color: #FFD1AA;
 }
+
+#no-button {
+    background-color:orangered;
+}
+
+.btn.btn-success.text-center {
+    background-color:rgb(250, 170, 79);
+}
