@@ -1,5 +1,7 @@
+// variable to keep track of which restaurant the user is at through the methods
 var count = 1;
 
+// method that shows the first restaurant
 function showGroupCollection() {
     db.collection("restaurants-list").doc("restaurant 1").get().then(function (doc) {
     var pic = doc.data().img;             //key "picture"
@@ -15,6 +17,113 @@ function showGroupCollection() {
 
 }
 
+// listens to yes and no and update the vote count accordingly
+// runs showNextCollection() to show the next restaurant
+function triggerNext(resId) {
+    var yes = document.getElementById("yes-button");
+
+    var no = document.getElementById("no-button");
+
+    // https://some.site/?id=123 just for reference. not using
+    const parsedUrl = new URL(window.location.href);
+    console.log(parsedUrl.searchParams.get("id")); // "123"
+
+    // extract id from url, assign to variable
+    var id = parsedUrl.searchParams.get("id");
+
+    // listen to yes button and increments value
+    $("#yes-button").on('click', function () {
+    console.log("yes was clicked");
+    if (count == 1) {
+        db.collection("rooms").doc(id).collection("votes").doc("r1").update({
+            value: firebase.firestore.FieldValue.increment(1)
+        });
+        $("#yes-button").unbind();
+        $("#no-button").unbind();
+        showNextCollection()
+    }
+    else if (count == 2) {
+        db.collection("rooms").doc(id).collection("votes").doc("r2").update({
+            value: firebase.firestore.FieldValue.increment(1)
+        });
+        $("#yes-button").unbind();
+        $("#no-button").unbind();
+        showNextCollection()
+    }
+    else if (count == 3) {
+        db.collection("rooms").doc(id).collection("votes").doc("r3").update({
+            value: firebase.firestore.FieldValue.increment(1)
+        });
+        $("#yes-button").unbind();
+        $("#no-button").unbind();
+        showNextCollection()
+    }
+    else if (count == 4) {
+        db.collection("rooms").doc(id).collection("votes").doc("r4").update({
+            value: firebase.firestore.FieldValue.increment(1)
+        });
+        $("#yes-button").unbind();
+        $("#no-button").unbind();
+        showNextCollection()
+    }
+    else if (count == 5) {
+        db.collection("rooms").doc(id).collection("votes").doc("r5").update({
+            value: firebase.firestore.FieldValue.increment(1)
+        });
+        $("#yes-button").unbind();
+        $("#no-button").unbind();
+        window.location.href = "group-end.html?id=" + id;
+    }
+    });
+
+    // listen to no button and decrements value
+    $("#no-button").on('click', function () {
+    console.log("no was clicked");
+    if (count == 1) {
+        db.collection("rooms").doc(id).collection("votes").doc("r1").update({
+            value: firebase.firestore.FieldValue.increment(-1)
+        });
+        $("#no-button").unbind();
+        $("#yes-button").unbind();
+        showNextCollection()
+    }
+    else if (count == 2) {
+        db.collection("rooms").doc(id).collection("votes").doc("r2").update({
+            value: firebase.firestore.FieldValue.increment(-1)
+        });
+        $("#no-button").unbind();
+        $("#yes-button").unbind();
+        showNextCollection()
+    }
+    else if (count == 3) {
+        db.collection("rooms").doc(id).collection("votes").doc("r3").update({
+            value: firebase.firestore.FieldValue.increment(-1)
+        });
+        $("#no-button").unbind();
+        $("#yes-button").unbind();
+        showNextCollection()
+    }
+    else if (count == 4) {
+        db.collection("rooms").doc(id).collection("votes").doc("r4").update({
+            value: firebase.firestore.FieldValue.increment(-1)
+        });
+        $("#no-button").unbind();
+        $("#yes-button").unbind();
+        showNextCollection()
+    }
+    else if (count == 5) {
+        db.collection("rooms").doc(id).collection("votes").doc("r5").update({
+            value: firebase.firestore.FieldValue.increment(-1)
+        });
+        $("#no-button").unbind();
+        $("#yes-button").unbind();
+        calculateWin(id)
+    }
+    });
+
+}
+
+// show the next restaurant in line, then run the method that listens to the buttons
 function showNextCollection() {
     if (count == 1) {
     db.collection("restaurants-list").doc("restaurant 2").get().then(function (doc) {
@@ -83,110 +192,20 @@ function showNextCollection() {
 
 }
 
-function triggerNext(resId) {
-    var yes = document.getElementById("yes-button");
-    // var new_element = yes.cloneNode(true);
-    // yes.parentNode.replaceChild(new_element, yes);
+// updates the current winner at the end of the user's voting
+// redirects to show the results
+function calculateWin(id) {
+    db.collection("rooms").doc(id).collection("votes").orderBy("value", "desc").limit(1).get().then(function(snap) {
+      snap.forEach(function(doc) {
+        var highest = doc.data().id;
+        console.log(highest);
+        db.collection("rooms").doc(id).update({
+          current_winner: highest
+        })
+      })
+      window.location.href = "group-end.html?id=" + id;
+    })
+  }
 
-    var no = document.getElementById("no-button");
-    // var new_element = no.cloneNode(true);
-    // no.parentNode.replaceChild(new_element, no);
-
-    // https://some.site/?id=123 just for reference. not using
-    const parsedUrl = new URL(window.location.href);
-    console.log(parsedUrl.searchParams.get("id")); // "123"
-
-    // extract id from url, assign to variable
-    var id = parsedUrl.searchParams.get("id");
-
-
-    $("#yes-button").on('click', function () {
-    console.log("yes was clicked");
-    if (count == 1) {
-        db.collection("rooms").doc(id).update({
-        1: firebase.firestore.FieldValue.increment(1),
-        });
-        $("#yes-button").unbind();
-        $("#no-button").unbind();
-        showNextCollection()
-    }
-    else if (count == 2) {
-        db.collection("rooms").doc(id).update({
-        2: firebase.firestore.FieldValue.increment(1),
-        });
-        $("#yes-button").unbind();
-        $("#no-button").unbind();
-        showNextCollection()
-    }
-    else if (count == 3) {
-        db.collection("rooms").doc(id).update({
-        3: firebase.firestore.FieldValue.increment(1),
-        });
-        $("#yes-button").unbind();
-        $("#no-button").unbind();
-        showNextCollection()
-    }
-    else if (count == 4) {
-        db.collection("rooms").doc(id).update({
-        4: firebase.firestore.FieldValue.increment(1),
-        });
-        $("#yes-button").unbind();
-        $("#no-button").unbind();
-        showNextCollection()
-    }
-    else if (count == 5) {
-        db.collection("rooms").doc(id).update({
-        5: firebase.firestore.FieldValue.increment(1),
-        });
-        $("#yes-button").unbind();
-        $("#no-button").unbind();
-        window.location.href = "group-end.html?id=" + id;
-    }
-    });
-
-    $("#no-button").on('click', function () {
-    console.log("no was clicked");
-    if (count == 1) {
-        db.collection("rooms").doc(id).update({
-        1: firebase.firestore.FieldValue.increment(-1),
-        });
-        $("#no-button").unbind();
-        $("#yes-button").unbind();
-        showNextCollection()
-    }
-    else if (count == 2) {
-        db.collection("rooms").doc(id).update({
-        2: firebase.firestore.FieldValue.increment(-1),
-        });
-        $("#no-button").unbind();
-        $("#yes-button").unbind();
-        showNextCollection()
-    }
-    else if (count == 3) {
-        db.collection("rooms").doc(id).update({
-        3: firebase.firestore.FieldValue.increment(-1),
-        });
-        $("#no-button").unbind();
-        $("#yes-button").unbind();
-        showNextCollection()
-    }
-    else if (count == 4) {
-        db.collection("rooms").doc(id).update({
-        4: firebase.firestore.FieldValue.increment(-1),
-        });
-        $("#no-button").unbind();
-        $("#yes-button").unbind();
-        showNextCollection()
-    }
-    else if (count == 5) {
-        db.collection("rooms").doc(id).update({
-        5: firebase.firestore.FieldValue.increment(-1),
-        });
-        $("#no-button").unbind();
-        $("#yes-button").unbind();
-        window.location.href = "group-end.html?id=" + id;
-    }
-    });
-
-}
+  // run showGroupCollection()
 showGroupCollection();

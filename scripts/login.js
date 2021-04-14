@@ -30,17 +30,29 @@ var uiConfig = {
             "preferences": preferences
           })
           .then(function () {
-            db.collection("rooms").doc(timeStamp + "").collection("votes").add({
-
+            db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r1").set({
+              value: 0,
+              id: 1
             })
-            // change this!
+            db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r2").set({
+              value: 0,
+              id: 2
+            })
+            db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r3").set({
+              value: 0,
+              id: 3
+            })
+            db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r4").set({
+              value: 0,
+              id: 4
+            })
+            db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r5").set({
+              value: 0,
+              id: 5
+            })
             console.log("New user added to firestore");
             db.collection("rooms").doc(timeStamp + "").set({
-              1: 0,
-              2: 0,
-              3: 0,
-              4: 0,
-              5: 0
+              current_winner: 0
             })
           })
           .then(function () {

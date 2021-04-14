@@ -1,3 +1,4 @@
+// displays the details of the winner
 function displayDetails(rid) {
     db.collection("restaurants-list")
       .where("id", "==", rid)
@@ -14,6 +15,8 @@ function displayDetails(rid) {
       });
   }
 
+
+// finds the current winner in the database
 function getCurrentWinner() {
   // https://some.site/?id=123 just for reference. not using
   const parsedUrl = new URL(window.location.href);

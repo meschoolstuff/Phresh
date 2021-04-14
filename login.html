@@ -6,16 +6,21 @@
   <title>Phresh</title>
   <meta name="comp1800 boilerplate code" content="my bcit project" />
   <meta name="author" content="BCIT" />
+
+  <!-- Bootstrap for Mobile-first, and JQuery -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+  
+  <!-- Stylesheets -->
   <link href="styles/login.css" rel="stylesheet" />
   <link href="styles/template.css" rel="stylesheet" />
 
 </head>
 
 <body>
+  <!--sets the header with the logo and name-->
   <nav class="navbar">
     <div class="container-fluid">
       <div id="logo">
@@ -25,6 +30,7 @@
     </div>
   </nav>
 
+   <!--container that holds the log-in box-->
   <div class="container">
     <h1>Welcome !</h1>
     <p>Let's get you logged in ...</p>
@@ -33,6 +39,9 @@
   <div id="firebaseui-auth-container" class="container-fluid text-center mt-5"></div>
   <div id="loader">Loading...</div>
 
+  <!----------------------------------------------->
+  <!-- JS: Boostrap, Firebase, API related, JQuery    -->
+  <!----------------------------------------------->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
@@ -44,9 +53,13 @@
   <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 
   <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-
+  
+  <!-- Link to the api keys for your firebase project -->
   <script src="scripts/firebase_api_phresh.js"></script>
 
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <!--------------------------------------------------------------------->
   <script src="scripts/login.js"></script>
 </body>
 
