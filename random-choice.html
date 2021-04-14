@@ -16,27 +16,26 @@
 </head>
 
 <body>
-  <nav class="navbar bg-warning">
+  <nav class="navbar">
     <div class="container-fluid">
       <div id="logo">
         <img src="images/logo.png" alt="logo" />
       </div>
-      <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
+      <h1 class="ms-4 me-auto">Phresh</h1>
     </div>
   </nav>
 
   <div class="container-fluid mt-4">
-    <a href="random1.html" type="button" class="btn btn-info">Back</a>
+    <a href="random-restaurant.html" id="back" type="button" class="btn btn-info">Back</a>
   </div>
 
   <div id="details-go-here">
   </div>
 
-
-  <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
-    <div class="container py-3">
+  <footer class="navbar justify-content-evenly fixed-bottom">
+    <div class="container py-1">
       <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
-      <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
+      <a class="btn fas fa-dice fa-2x px-auto" href="random-restaurant.html"></a>
       <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
       <a class="btn fas fa-users fa-2x px-auto" href="group-use-preferences.html"></a>
       <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
@@ -60,7 +59,7 @@
 
   <script src="scripts/firebase_api_phresh.js"></script>
 
-  <!-- JS files: Your own JavaScript functions included here    -->
+  <!-- JS files: Our own JavaScript functions  -->
   <script>
         function getDirections() {
       const parsedUrl = new URL(window.location.href);
@@ -72,16 +71,15 @@
 
       // use this ID to read from firestore
       db.collection("restaurants-list")
-        .doc(id)   // ID that we extracted
+        .doc(id)   
         .get()
-        .then(function (doc) {   // display details!
-          var heading = doc.data().title;       //key "name"
-          var bio = doc.data().description;     //key "description"
+        .then(function (doc) {   
+          var heading = doc.data().title;       
+          var bio = doc.data().description;     
           var direction = doc.data().location;
-          var googleAPIkey = "AIzaSyCrvQOtoZY8NHztTLD60XfklA_IwjZ9vEo"
           var codestring =
             '<div id="directions">'
-            + '<div class="container-fluid">'
+            + '<div class="container-fluid mt-4">'
             + '<div class="card container-fluid">'
             + direction
             + '</div>'

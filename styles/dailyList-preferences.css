@@ -1,11 +1,19 @@
 #preferences {
     width: 99.5%;
-    background-color: white;
+    background-color: peachpuff;
     margin: 0 auto;
     margin-top: 1.5em;
     height: 50vh;
     border-radius: 4px;
     padding: 4%;
+}
+
+#back {
+    background-color: peachpuff;
+}
+
+#finish {
+    background-color:rgb(250, 170, 79);
 }
 
 .settings {

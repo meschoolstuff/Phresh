@@ -1,9 +1,25 @@
 .card.mx-auto {
     width: 18rem;
-    margin-top: 7rem;
+    margin-top: 18vh;
 }
 
 div button {
     margin: 0 2% 2% 2%;
     width: 45%;
+}
+
+.card.mx-auto{
+    background-color: peachpuff;
+}
+
+#yes {
+    background-color:rgb(250, 170, 79);
+}
+
+#no {
+    background-color:orangered;
+}
+
+#back {
+    background-color: peachpuff;
 }

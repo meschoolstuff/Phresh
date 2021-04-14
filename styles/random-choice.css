@@ -3,10 +3,10 @@
     margin: 0 auto;
 }
 
-.container-fluid.mt-4 {
-    margin-bottom: -5vh;
-}
-
 .card.container-fluid {
     background-color: #FFD1AA;
+}
+
+#back {
+    background-color: peachpuff;
 }

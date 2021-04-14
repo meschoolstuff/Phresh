@@ -6,6 +6,32 @@
     margin-top: 3vh;
 }
 
+#save {
+    background-color:rgb(250, 170, 79);
+}
+
+.list-group li {
+    background-color: peachpuff;
+}
+
 .btn.btn-dark.container-fluid.mt-4 {
-    margin-bottom: 14vh;
+    margin-bottom: 11vh;
+}
+
+#preferences {
+    width: 99.5%;
+    background-color: peachpuff;
+    margin: 0 auto;
+    margin-top: 1.5em;
+    height: 50vh;
+    border-radius: 4px;
+    padding: 4%;
+}
+
+#back {
+    background-color: peachpuff;
+}
+
+#sectionTitle {
+    text-align: center;
 }

@@ -1,3 +1,11 @@
 body {
     background-color: rgb(255, 127, 80);
 }
+
+#back {
+    background-color: peachpuff;
+}
+
+#submit {
+    background: rgb(250, 170, 79);
+}

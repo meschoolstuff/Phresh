@@ -1,6 +1,6 @@
 ## Phresh
 
-Team Members: Mike dji Lim, Kevin BOI Chang, Michael whack Thompson
+Team Members: Mike Lim, Kevin Chang
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -15,6 +15,8 @@ Technologies used for this project:
 * JavaScript
 * Bootstrap 
 * ...
+* Google Maps API: 
+* Our google API key that is required for hosting google maps: AIzaSyCrvQOtoZY8NHztTLD60XfklA_IwjZ9vEo.
 	
 ## Content
 Content of the project folder:
@@ -37,8 +39,6 @@ It has the following subfolders and files:
 Firebase hosting files: 
 ├── .firebaserc...
 
-
-```
 
 Tips for file naming files and folders:
 * use lowercase with no spaces

@@ -1,5 +1,9 @@
-p {
-    font-size: 11pt;
+#sectionTitle{
+    text-align: center;
+}
+
+#back {
+    background-color: peachpuff;
 }
 
 #buttons button {
@@ -25,9 +29,9 @@ p {
 
 #cardContainer {
     margin: 0 auto;
-    margin-bottom: 14vh;
+    margin-bottom: 11vh;
 }
 
-#cardContainer a {
-    margin: 2%;
+#cardContainer button {
+    background-color: rgb(250, 170, 79);
 }

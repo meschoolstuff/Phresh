@@ -4,10 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <title>Phresh</title>
+
   <meta name="comp1800 boilerplate code" content="my bcit project" />
   <meta name="author" content="BCIT" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
   <link href="styles/template.css" rel="stylesheet" />
@@ -16,27 +17,26 @@
 </head>
 
 <body>
-  <nav class="navbar bg-warning">
+  <nav class="navbar">
     <div class="container-fluid">
       <div id="logo">
         <img src="images/logo.png" alt="logo" />
       </div>
-      <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
+      <h1 class="ms-4 me-auto">Phresh</h1>
     </div>
   </nav>
 
   <div class="container-fluid mt-4">
-    <a href="dailyList-list.html" type="button" class="btn btn-info">Back</a>
+    <a href="dailyList-list.html" id="back" type="button" class="btn btn-info">Back</a>
   </div>
 
   <div id="details-go-here">
   </div>
 
-
-  <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
-    <div class="container py-3">
+  <footer class="navbar justify-content-evenly fixed-bottom">
+    <div class="container py-1">
       <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
-      <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
+      <a class="btn fas fa-dice fa-2x px-auto" href="random-restaurant.html"></a>
       <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
       <a class="btn fas fa-users fa-2x px-auto" href="group-use-preferences.html"></a>
       <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
@@ -60,28 +60,29 @@
 
   <script src="scripts/firebase_api_phresh.js"></script>
 
-  <!-- JS files: Your own JavaScript functions included here    -->
+  <!-- Our own JavaScript functions  -->
   <script>
     function getDirections() {
       const parsedUrl = new URL(window.location.href);
       console.log(parsedUrl.searchParams.get("id"));
 
-      // extract id from url, assign to variable
+      // previous page put the id into the current html address, will read this id and assign it to a variable.
       var id = parsedUrl.searchParams.get("id");
       console.log(id);
 
-      // use this ID to read from firestore
+      // use this ID to read data from firestore
       db.collection("restaurants-list")
-        .doc(id)   // ID that we extracted
+        .doc(id)
         .get()
-        .then(function (doc) {   // display details!
-          var heading = doc.data().title;       //key "name"
-          var bio = doc.data().description;     //key "description"
+        .then(function (doc) {   
+          // with the id, we will read from the document the title, description and location of the restaurant document.
+          var heading = doc.data().title;       
+          var bio = doc.data().description;    
           var direction = doc.data().location;
-          var googleAPIkey = "AIzaSyCrvQOtoZY8NHztTLD60XfklA_IwjZ9vEo"
+          // with the read and stored into variables, we concantenate them together to create an HTML structure.
           var codestring =
             '<div id="directions">'
-            + '<div class="container-fluid">'
+            + '<div class="container-fluid mt-4">'
             + '<div class="card container-fluid">'
             + direction
             + '</div>'
@@ -92,15 +93,12 @@
             + '</div>'
             + '</div>'
             + '</div>';
+          // we then append our newly built HTML structure into an HTML DOM element .
           $("#details-go-here").append(codestring);
-          console.log("location is " + location);
-
         })
     }
     getDirections();
   </script>
-
-
 </body>
 
 </html>

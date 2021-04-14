@@ -1,3 +1,7 @@
 * body {
     background-color: rgb(255, 127, 80);
 }
+
+.container {
+    margin-left: 5%;
+}

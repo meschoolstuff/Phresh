@@ -1,150 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Phresh</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project" />
-    <meta name="author" content="BCIT" />
 
-    <!-- Bootstrap for Mobile-first, and JQuery -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="utf-8" />
+  <title>Phresh</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project" />
+  <meta name="author" content="BCIT" />
 
-    <!-- Optional styles and scripts of your own -->
-    <link href="styles/group-input-code.css" rel="stylesheet" />
-  </head>
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
-  <body>
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
+  <!-- Optional styles and scripts of your own -->
+  <link href="styles/group-input-code.css" rel="stylesheet" />
+  <link href="styles/template.css" rel="stylesheet" />
 
-    <nav class="navbar bg-warning">
-      <div class="container-fluid" style="height: 100px">
-        <div id="logo">
-          <img src="images/logo.png" alt="logo" style="height: 100px" />
-        </div>
-        <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
+</head>
+
+<body>
+  <!-------------------------------------->
+  <!-- The following is HTML for layout -->
+  <!-------------------------------------->
+
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div id="logo">
+        <img src="images/logo.png" alt="logo" />
       </div>
-    </nav>
-
-    <div class="container-fluid me-5 mt-5">
-      <a href="group-host-join.html" type="button" class="btn btn-info">Back</a>
+      <h1 class="ms-4 me-auto">Phresh</h1>
     </div>
+  </nav>
 
-    <form>
-      <div class="form-group container-fluid w-75 text-center">
-        <label
-          class="container-fluid mt-5 text-center h1"
-          for="exampleInputEmail1"
-          >Group Code</label
-        >
-        <input
-          type="text"
-          class="form-control mt-5"
-          id="groupCode"
-          aria-describedby="emailHelp"
-          placeholder="Enter group code"
-        />
-      </div>
-      <div class="text-center">
-        <button
-          id="submit" 
-          class="btn btn-primary mt-5 text-center"
-          onclick="return readInput()"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
+  <div class="container-fluid me-5 mt-5">
+    <a id="back" href="group-host-join.html" type="button" class="btn btn-info">Back</a>
+  </div>
 
-    <div id="error-message"></div>
+  <form>
+    <div class="form-group container-fluid w-75 text-center">
+      <label class="container-fluid mt-5 text-center h1" for="exampleInputEmail1">Group Code</label>
+      <input type="text" class="form-control mt-5" id="groupCode" aria-describedby="emailHelp"
+        placeholder="Enter group code" />
+    </div>
+    <div class="text-center">
+      <button id="submit" class="btn btn-primary mt-5 text-center" onclick="return readInput()">
+        Submit
+      </button>
+    </div>
+  </form>
 
-    <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
-      <div class="container py-3">
-        <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
-        <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
-        <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
-        <a
-          class="btn fas fa-users fa-2x px-auto"
-          href="group-use-preferences.html"
-        ></a>
-        <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
-      </div>
-    </footer>
+  <div id="error-message"></div>
 
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/26da0e4274.js"
-      crossorigin="anonymous"
-    ></script>
+  <footer class="navbar justify-content-evenly fixed-bottom">
+    <div class="container py-1">
+      <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
+      <a class="btn fas fa-dice fa-2x px-auto" href="random-restaurant.html"></a>
+      <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
+      <a class="btn fas fa-users fa-2x px-auto" href="group-use-preferences.html"></a>
+      <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
+    </div>
+  </footer>
 
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+  <!-- JS: Boostrap, Firebase, API related    -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
 
-    <script src="scripts/firebase_api_phresh.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 
-    <!-- JS files: Your own JavaScript functions included here    -->
+  <script src="scripts/firebase_api_phresh.js"></script>
 
-    <script>
-      var count = 0;
+  <!-- JS files: Your own JavaScript functions included here    -->
 
-      function readInput() {
-        var input = document.getElementById("groupCode").value;
-        console.log(input);
+  <script>
+    var count = 0;
 
-        var roomRef = db.collection("rooms").doc("" + input);
+    function readInput() {
+      var input = document.getElementById("groupCode").value;
+      console.log(input);
 
-        roomRef
-          .get()
-          .then((doc) => {
-            if (doc.exists) {
-              var id = "" + input;
-              console.log("Document data:", doc.data());
-              console.log("exists!");
-              addSubmitListener(id);
-            } else if (count == 0) {
-              // doc.data() will be undefined in this case
-              printErrorMessage();
-              console.log("No such document!");
-              count = 1;
-            }
-          })
-          .catch((error) => {
-            console.log("Error getting document:", error);
-          });
+      var roomRef = db.collection("rooms").doc("" + input);
 
-        return false;
-      }
+      roomRef
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            var id = "" + input;
+            console.log("Document data:", doc.data());
+            console.log("exists!");
+            addSubmitListener(id);
+          } else if (count == 0) {
+            // doc.data() will be undefined in this case
+            printErrorMessage();
+            console.log("No such document!");
+            count = 1;
+          }
+        })
+        .catch((error) => {
+          console.log("Error getting document:", error);
+        });
 
-      function addSubmitListener(id) {
-        // document.getElementById("submit").addEventListener("click", function () {
-          console.log(id + "was clicked!");
-          //   window.location.href="details.html";
-          window.location.href = "group-picks.html?id=" + id;
-        // });
-      }
+      return false;
+    }
 
-      function printErrorMessage() {
-        $("#error-message").append(
-          "<label class='container-fluid mt-5 text-center text-danger h3'>Group Code Does Not Exist!</label>"
-        );
-      }
-    </script>
-  </body>
+    function addSubmitListener(id) {
+      // document.getElementById("submit").addEventListener("click", function () {
+      console.log(id + "was clicked!");
+      //   window.location.href="details.html";
+      window.location.href = "group-picks.html?id=" + id;
+      // });
+    }
+
+    function printErrorMessage() {
+      $("#error-message").append(
+        "<label class='container-fluid mt-5 text-center text-danger h3'>Group Code Does Not Exist!</label>"
+      );
+    }
+  </script>
+</body>
+
 </html>

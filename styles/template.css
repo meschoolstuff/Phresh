@@ -1,11 +1,42 @@
-* body {
-    background-color: rgb(255, 127, 80);
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    font-family: roboto;
+    color: black;
 }
 
 .navbar.bg-warning + .container-fluid {
     height: 100px;
 }
 
-#logo img {
-    height: 100px;
+body {
+    background-color: rgb(255, 127, 80);
 }
+
+nav {
+    background-color: #FCCD30;
+}
+
+.navbar h1 {
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+#logo img {
+    height: 75px;
+}
+
+.container h1 {
+    font-size: 35px;
+    margin-top: 22px;
+}
+
+.container p {
+    font-size: 20px;
+}
+footer {
+    background-color: #FCCD30;
+}
+
+
+

@@ -1,21 +1,19 @@
-* body {
-    background-color: rgb(255, 127, 80);
+.container {
+    text-align: center;
 }
 
 #button-container {
-    margin-top: 10vh;
+    margin-top: 8vh;
 }
 
-.container.text-center {
+#button-container div {
     width: 250px;
     margin-bottom: 8vh;
 }
 
-.container.text-center a {
+#button-container a {
     font-size: 12pt;
     background-color: #FFD1AA;
 }
 
-h1 {
-    margin: 0 auto;
-}
+

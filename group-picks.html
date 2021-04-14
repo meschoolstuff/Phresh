@@ -1,296 +1,275 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Phresh</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project" />
-    <meta name="author" content="BCIT" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
 
-    <link href="styles/template.css" rel="stylesheet" />
-    <link href="styles/group-picks.css" rel="stylesheet" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Phresh</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project" />
+  <meta name="author" content="BCIT" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
-  <body>
-    <nav class="navbar bg-warning">
-      <div class="container-fluid">
-        <div id="logo">
-          <img src="images/logo.png" alt="logo" />
-        </div>
-        <p class="text-center fs-1 ms-5 me-auto"><b>Phresh</b></p>
+  <link href="styles/template.css" rel="stylesheet" />
+  <link href="styles/group-picks.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div id="logo">
+        <img src="images/logo.png" alt="logo" />
       </div>
-    </nav>
+      <h1 class="ms-4 me-auto">Phresh</h1>
+    </div>
+  </nav>
 
-    <div class="container">
-      <div id="sectionTitle">
-        <h1 class="display-4">What do you crave?</h1>
-        <div class="container-fluid mt-1">
-          <a
-            href="group-use-preferences.html"
-            type="button"
-            class="btn btn-info"
-            >Back</a
-          >
-        </div>
+  <div class="container">
+    <div id="sectionTitle">
+      <h1 class="display-4">What do you crave?</h1>
+      <div class="container-fluid mt-1">
+        <a id="back" href="group-use-preferences.html" type="button" class="btn btn-info">Back</a>
       </div>
     </div>
+  </div>
 
-    <div id="cardContainer">
-      <div id="group-cards-go-here">
-        <div class="card mt-3 container-fluid">
-          <img id="restaurant-image" class="card-img-top mt-3" />
-          <div class="card-body">
-            <h5 id="heading" class="card-title"></h5>
-            <p id="bio" class="card-text"></p>
-            <div class="container-fluid text-center">
-              <button
-                id="yes-button"
-                class="btn btn-success text-center"
-              >
-                Yes
-              </button>
-              <button id="no-button" class="btn btn-danger text-center">
-                No
-              </button>
-            </div>
+  <div id="cardContainer">
+    <div id="group-cards-go-here">
+      <div class="card mt-3 container-fluid">
+        <img id="restaurant-image" class="card-img-top mt-3" />
+        <div class="card-body">
+          <h5 id="heading" class="card-title"></h5>
+          <p id="bio" class="card-text"></p>
+          <div class="container-fluid text-center">
+            <button id="yes-button" class="btn btn-success text-center">
+              Yes
+            </button>
+            <button id="no-button" class="btn btn-danger text-center">
+              No
+            </button>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
-      <div class="container py-3">
-        <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
-        <a class="btn fas fa-dice fa-2x px-auto" href="random1.html"></a>
-        <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
-        <a
-          class="btn fas fa-users fa-2x px-auto"
-          href="group-use-preferences.html"
-        ></a>
-        <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
-      </div>
-    </footer>
+  <footer class="navbar justify-content-evenly fixed-bottom">
+    <div class="container py-1">
+      <a class="btn fas fa-home fa-2x px-auto" href="main.html"></a>
+      <a class="btn fas fa-dice fa-2x px-auto" href="random-restaurant.html"></a>
+      <a class="btn fas fa-list fa-2x px-auto" href="dailyList-menu.html"></a>
+      <a class="btn fas fa-users fa-2x px-auto" href="group-use-preferences.html"></a>
+      <a class="btn fas fa-cogs fa-2x px-auto" href="settings.html"></a>
+    </div>
+  </footer>
 
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/26da0e4274.js"
-      crossorigin="anonymous"
-    ></script>
+  <!-- JS: Boostrap, Firebase, API related    -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 
-    <script src="scripts/firebase_api_phresh.js"></script>
+  <script src="scripts/firebase_api_phresh.js"></script>
 
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <script>
-      var count = 1;
-      function showGroupCollection() {
-        db.collection("restaurants-list").doc("restaurant 1").get().then(function (doc) {
-              var pic = doc.data().img;             //key "picture"
-              var heading = doc.data().title;       //key "name"
-              var bio = doc.data().description;     //key "description"
-              var resId = doc.id;
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <script>
+    var count = 1;
+    function showGroupCollection() {
+      db.collection("restaurants-list").doc("restaurant 1").get().then(function (doc) {
+        var pic = doc.data().img;             //key "picture"
+        var heading = doc.data().title;       //key "name"
+        var bio = doc.data().description;     //key "description"
+        var resId = doc.id;
 
-              $("#heading").text(heading);
-              $("#bio").text(bio);
-              $("#restaurant-image").attr("src", pic);
-              triggerNext(resId);
-            })
-          
+        $("#heading").text(heading);
+        $("#bio").text(bio);
+        $("#restaurant-image").attr("src", pic);
+        triggerNext(resId);
+      })
+
+    }
+
+    function showNextCollection() {
+      if (count == 1) {
+        db.collection("restaurants-list").doc("restaurant 2").get().then(function (doc) {
+          var pic = doc.data().img;             //key "picture"
+          var heading = doc.data().title;       //key "name"
+          var bio = doc.data().description;     //key "description"
+          var resId = doc.id;
+
+          $("#heading").text(heading);
+          $("#bio").text(bio);
+          $("#restaurant-image").attr("src", pic);
+
+          count = count + 1;
+          triggerNext(resId)
+        })
       }
 
-      function showNextCollection() {
+      if (count == 2) {
+        db.collection("restaurants-list").doc("restaurant 3").get().then(function (doc) {
+          var pic = doc.data().img;             //key "picture"
+          var heading = doc.data().title;       //key "name"
+          var bio = doc.data().description;     //key "description"
+          var resId = doc.id;
+
+          $("#heading").text(heading);
+          $("#bio").text(bio);
+          $("#restaurant-image").attr("src", pic);
+
+          count = count + 1;
+          triggerNext(resId)
+        })
+      }
+
+      if (count == 3) {
+        db.collection("restaurants-list").doc("restaurant 4").get().then(function (doc) {
+          var pic = doc.data().img;             //key "picture"
+          var heading = doc.data().title;       //key "name"
+          var bio = doc.data().description;     //key "description"
+          var resId = doc.id;
+
+          $("#heading").text(heading);
+          $("#bio").text(bio);
+          $("#restaurant-image").attr("src", pic);
+
+          count = count + 1;
+          triggerNext(resId)
+        })
+      }
+
+      if (count == 4) {
+        db.collection("restaurants-list").doc("r5").get().then(function (doc) {
+          var pic = doc.data().img;             //key "picture"
+          var heading = doc.data().title;       //key "name"
+          var bio = doc.data().description;     //key "description"
+          var resId = doc.id;
+
+          $("#heading").text(heading);
+          $("#bio").text(bio);
+          $("#restaurant-image").attr("src", pic);
+
+          count = count + 1;
+          triggerNext(resId)
+        })
+      }
+
+
+    }
+
+    function triggerNext(resId) {
+      var yes = document.getElementById("yes-button");
+      // var new_element = yes.cloneNode(true);
+      // yes.parentNode.replaceChild(new_element, yes);
+
+      var no = document.getElementById("no-button");
+      // var new_element = no.cloneNode(true);
+      // no.parentNode.replaceChild(new_element, no);
+
+      // https://some.site/?id=123 just for reference. not using
+      const parsedUrl = new URL(window.location.href);
+      console.log(parsedUrl.searchParams.get("id")); // "123"
+
+      // extract id from url, assign to variable
+      var id = parsedUrl.searchParams.get("id");
+
+
+      $("#yes-button").on('click', function () {
+        console.log("yes was clicked");
         if (count == 1) {
-          db.collection("restaurants-list").doc("restaurant 2").get().then(function (doc) {
-              var pic = doc.data().img;             //key "picture"
-              var heading = doc.data().title;       //key "name"
-              var bio = doc.data().description;     //key "description"
-              var resId = doc.id;
-
-              $("#heading").text(heading);
-              $("#bio").text(bio);
-              $("#restaurant-image").attr("src", pic);
-
-              count = count + 1;
-              triggerNext(resId)
-            })
+          db.collection("rooms").doc(id).update({
+            1: firebase.firestore.FieldValue.increment(1),
+          });
+          $("#yes-button").unbind();
+          $("#no-button").unbind();
+          showNextCollection()
         }
-
-        if (count == 2) {
-          db.collection("restaurants-list").doc("restaurant 3").get().then(function (doc) {
-              var pic = doc.data().img;             //key "picture"
-              var heading = doc.data().title;       //key "name"
-              var bio = doc.data().description;     //key "description"
-              var resId = doc.id;
-
-              $("#heading").text(heading);
-              $("#bio").text(bio);
-              $("#restaurant-image").attr("src", pic);
-
-              count = count + 1;
-              triggerNext(resId)
-            })
+        else if (count == 2) {
+          db.collection("rooms").doc(id).update({
+            2: firebase.firestore.FieldValue.increment(1),
+          });
+          $("#yes-button").unbind();
+          $("#no-button").unbind();
+          showNextCollection()
         }
-
-        if (count == 3) {
-          db.collection("restaurants-list").doc("restaurant 4").get().then(function (doc) {
-              var pic = doc.data().img;             //key "picture"
-              var heading = doc.data().title;       //key "name"
-              var bio = doc.data().description;     //key "description"
-              var resId = doc.id;
-
-              $("#heading").text(heading);
-              $("#bio").text(bio);
-              $("#restaurant-image").attr("src", pic);
-
-              count = count + 1;
-              triggerNext(resId)
-            })
+        else if (count == 3) {
+          db.collection("rooms").doc(id).update({
+            3: firebase.firestore.FieldValue.increment(1),
+          });
+          $("#yes-button").unbind();
+          $("#no-button").unbind();
+          showNextCollection()
         }
-
-        if (count == 4) {
-          db.collection("restaurants-list").doc("r5").get().then(function (doc) {
-              var pic = doc.data().img;             //key "picture"
-              var heading = doc.data().title;       //key "name"
-              var bio = doc.data().description;     //key "description"
-              var resId = doc.id;
-
-              $("#heading").text(heading);
-              $("#bio").text(bio);
-              $("#restaurant-image").attr("src", pic);
-
-              count = count + 1;
-              triggerNext(resId)
-            })
+        else if (count == 4) {
+          db.collection("rooms").doc(id).update({
+            4: firebase.firestore.FieldValue.increment(1),
+          });
+          $("#yes-button").unbind();
+          $("#no-button").unbind();
+          showNextCollection()
         }
+        else if (count == 5) {
+          db.collection("rooms").doc(id).update({
+            5: firebase.firestore.FieldValue.increment(1),
+          });
+          $("#yes-button").unbind();
+          $("#no-button").unbind();
+          window.location.href = "group-end.html?id=" + id;
+        }
+      });
 
+      $("#no-button").on('click', function () {
+        console.log("no was clicked");
+        if (count == 1) {
+          db.collection("rooms").doc(id).update({
+            1: firebase.firestore.FieldValue.increment(-1),
+          });
+          $("#no-button").unbind();
+          $("#yes-button").unbind();
+          showNextCollection()
+        }
+        else if (count == 2) {
+          db.collection("rooms").doc(id).update({
+            2: firebase.firestore.FieldValue.increment(-1),
+          });
+          $("#no-button").unbind();
+          $("#yes-button").unbind();
+          showNextCollection()
+        }
+        else if (count == 3) {
+          db.collection("rooms").doc(id).update({
+            3: firebase.firestore.FieldValue.increment(-1),
+          });
+          $("#no-button").unbind();
+          $("#yes-button").unbind();
+          showNextCollection()
+        }
+        else if (count == 4) {
+          db.collection("rooms").doc(id).update({
+            4: firebase.firestore.FieldValue.increment(-1),
+          });
+          $("#no-button").unbind();
+          $("#yes-button").unbind();
+          showNextCollection()
+        }
+        else if (count == 5) {
+          db.collection("rooms").doc(id).update({
+            5: firebase.firestore.FieldValue.increment(-1),
+          });
+          $("#no-button").unbind();
+          $("#yes-button").unbind();
+          window.location.href = "group-end.html?id=" + id;
+        }
+      });
 
-      }
+    }
+    showGroupCollection();
+  </script>
+</body>
 
-      function triggerNext(resId) {
-        var yes = document.getElementById("yes-button");
-        // var new_element = yes.cloneNode(true);
-        // yes.parentNode.replaceChild(new_element, yes);
-
-        var no = document.getElementById("no-button");
-        // var new_element = no.cloneNode(true);
-        // no.parentNode.replaceChild(new_element, no);
-
-        // https://some.site/?id=123 just for reference. not using
-        const parsedUrl = new URL(window.location.href);
-        console.log(parsedUrl.searchParams.get("id")); // "123"
-
-        // extract id from url, assign to variable
-        var id = parsedUrl.searchParams.get("id");
-
-
-        $("#yes-button").on('click', function () {
-          console.log("yes was clicked");
-          if (count == 1) {
-            db.collection("rooms").doc(id).update({
-              1: firebase.firestore.FieldValue.increment(1),
-            });
-            $("#yes-button").unbind();
-            $("#no-button").unbind();
-            showNextCollection()
-          }
-          else if (count == 2) {
-            db.collection("rooms").doc(id).update({
-              2: firebase.firestore.FieldValue.increment(1),
-            });
-            $("#yes-button").unbind();
-            $("#no-button").unbind();
-            showNextCollection()
-          }
-          else if (count == 3) {
-            db.collection("rooms").doc(id).update({
-              3: firebase.firestore.FieldValue.increment(1),
-            });
-            $("#yes-button").unbind();
-            $("#no-button").unbind();
-            showNextCollection()
-          }
-          else if (count == 4) {
-            db.collection("rooms").doc(id).update({
-              4: firebase.firestore.FieldValue.increment(1),
-            });
-            $("#yes-button").unbind();
-            $("#no-button").unbind();
-            showNextCollection()
-          }
-          else if (count == 5) {
-            db.collection("rooms").doc(id).update({
-              5: firebase.firestore.FieldValue.increment(1),
-            });
-            $("#yes-button").unbind();
-            $("#no-button").unbind();
-            window.location.href = "group-end.html?id=" + id;
-          }
-        });
-
-        $("#no-button").on('click', function () {
-          console.log("no was clicked");
-          if (count == 1) {
-            db.collection("rooms").doc(id).update({
-              1: firebase.firestore.FieldValue.increment(-1),
-            });
-            $("#no-button").unbind();
-            $("#yes-button").unbind();
-            showNextCollection()
-          }
-          else if (count == 2) {
-            db.collection("rooms").doc(id).update({
-              2: firebase.firestore.FieldValue.increment(-1),
-            });
-            $("#no-button").unbind();
-            $("#yes-button").unbind();
-            showNextCollection()
-          }
-          else if (count == 3) {
-            db.collection("rooms").doc(id).update({
-              3: firebase.firestore.FieldValue.increment(-1),
-            });
-            $("#no-button").unbind();
-            $("#yes-button").unbind();
-            showNextCollection()
-          }
-          else if (count == 4) {
-            db.collection("rooms").doc(id).update({
-              4: firebase.firestore.FieldValue.increment(-1),
-            });
-            $("#no-button").unbind();
-            $("#yes-button").unbind();
-            showNextCollection()
-          }
-          else if (count == 5) {
-            db.collection("rooms").doc(id).update({
-              5: firebase.firestore.FieldValue.increment(-1),
-            });
-            $("#no-button").unbind();
-            $("#yes-button").unbind();
-            window.location.href = "group-end.html?id=" + id;
-          }
-        });
-
-      }
-      showGroupCollection();
-    </script>
-  </body>
 </html>

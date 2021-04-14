@@ -14,6 +14,14 @@
     width: 45%;
 }
 
+#no {
+    background-color:orangered;
+}
+
+.btn.btn-success.text-center {
+    background-color:rgb(250, 170, 79);
+}
+
 .card-body {
     width: 105%;
     margin-left: -0.4rem;
@@ -30,9 +38,8 @@
     background-color: #FFD1AA;
 }
 
-#cardContainer {
-    margin: 0 auto;
-    margin-bottom: 14vh;
+.container {
+    text-align: center;
 }
 
 

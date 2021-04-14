@@ -1,3 +1,24 @@
 body {
     background-color: coral;
 }
+
+#back {
+    background-color: peachpuff;
+    margin-left: 5%;
+}
+
+.container {
+    text-align: center;
+}
+
+#buttons {
+    margin-top: 15%;
+}
+
+#host a {
+    background-color:peachpuff;
+}
+
+#join a {
+    background-color: peachpuff;
+}
