@@ -1,5 +1,8 @@
 * body {
-    background-color: rgb(255, 127, 80);
+    /* background-color: ivory; */
+    background-image: url(../images/iphone_orange_gradient.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #button-container {
@@ -13,9 +16,21 @@
 
 .container.text-center a {
     font-size: 12pt;
+    /* background-color: rgba(131, 131, 131, 0.24); */
     background-color: #FFD1AA;
 }
 
 h1 {
     margin: 0 auto;
+}
+
+.backg {
+    /* background-image: url(../images/green-blue.png); */
+    /* background-image: linear-gradient(15deg, #EFEFD0 0%, #80d0c7 100%); */
+
+    background-color: rgba(255, 161, 73, 0.89);
+
+    /* background-image: url(../images/iphone_orange_gradient.jpeg);
+    background-repeat: no-repeat;
+    background-position: center; */
 }

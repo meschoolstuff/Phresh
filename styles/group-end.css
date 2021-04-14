@@ -23,3 +23,8 @@ p {
 #cardContainer a {
     margin: 2%;
 }
+
+.card.mt-3.container-fluid {
+    width: 355px;
+    background-color: #FFD1AA;
+}
