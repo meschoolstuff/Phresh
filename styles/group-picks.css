@@ -35,7 +35,10 @@ p {
 
 #no-button {
     background-color:orangered;
+    color: white;
 }
+
+
 
 .btn.btn-success.text-center {
     background-color:rgb(250, 170, 79);
