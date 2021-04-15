@@ -9,7 +9,7 @@ function sayGroupCode() {
           .then(function (doc) {
             var n = doc.data().groupCode;
             resetVotes(n);
-            resetTotalVotes(id)
+            resetTotalVotes(n);
             $("#code-goes-here").text(n);
             addSubmitListener(n);
           });
