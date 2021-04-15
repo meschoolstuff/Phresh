@@ -43,7 +43,8 @@ Content of the project folder:
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                # 
+    /iphone_orange_gradient.jpeg    # background image
+    /logo.png                       # the application logo
 ├── scripts                  # Folder for scripts
     /dailyList-choice.js       # script for dailyList-choice.html
     /dailyList-list.js         # script for dailyList-list.html
