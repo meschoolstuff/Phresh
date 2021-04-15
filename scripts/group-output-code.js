@@ -9,6 +9,7 @@ function sayGroupCode() {
           .then(function (doc) {
             var n = doc.data().groupCode;
             resetVotes(n);
+            resetTotalVotes(id)
             $("#code-goes-here").text(n);
             addSubmitListener(n);
           });
@@ -46,5 +47,13 @@ function resetVotes(id) {
 
   db.collection("rooms").doc(id).collection("votes").doc("r5").update({
     value: 0
+  })
+}
+
+// resets the total votes field each time you run the program
+function resetTotalVotes(id) {
+  id = "" + id;
+  db.collection("rooms").doc(id).update({
+    total_votes: 0
   })
 }
