@@ -41,3 +41,7 @@ div .btn.btn-dark {
 .checkboxes {
     margin: 3%;
 }
+
+.nav-link.active {
+    background-color: rgb(250, 170, 79);
+}
