@@ -72,7 +72,8 @@ function triggerNext(resId) {
         });
         $("#yes-button").unbind();
         $("#no-button").unbind();
-        window.location.href = "group-end.html?id=" + id;
+        calculateWin(id)
+        incrementTotalVotes(id)
     }
     });
 
@@ -80,44 +81,30 @@ function triggerNext(resId) {
     $("#no-button").on('click', function () {
     console.log("no was clicked");
     if (count == 1) {
-        db.collection("rooms").doc(id).collection("votes").doc("r1").update({
-            value: firebase.firestore.FieldValue.increment(-1)
-        });
         $("#no-button").unbind();
         $("#yes-button").unbind();
         showNextCollection()
     }
     else if (count == 2) {
-        db.collection("rooms").doc(id).collection("votes").doc("r2").update({
-            value: firebase.firestore.FieldValue.increment(-1)
-        });
         $("#no-button").unbind();
         $("#yes-button").unbind();
         showNextCollection()
     }
     else if (count == 3) {
-        db.collection("rooms").doc(id).collection("votes").doc("r3").update({
-            value: firebase.firestore.FieldValue.increment(-1)
-        });
         $("#no-button").unbind();
         $("#yes-button").unbind();
         showNextCollection()
     }
     else if (count == 4) {
-        db.collection("rooms").doc(id).collection("votes").doc("r4").update({
-            value: firebase.firestore.FieldValue.increment(-1)
-        });
         $("#no-button").unbind();
         $("#yes-button").unbind();
         showNextCollection()
     }
     else if (count == 5) {
-        db.collection("rooms").doc(id).collection("votes").doc("r5").update({
-            value: firebase.firestore.FieldValue.increment(-1)
-        });
         $("#no-button").unbind();
         $("#yes-button").unbind();
         calculateWin(id)
+        incrementTotalVotes(id)
     }
     });
 
@@ -205,6 +192,13 @@ function calculateWin(id) {
       })
       window.location.href = "group-end.html?id=" + id;
     })
+  }
+
+  // keep track of total finished voters
+  function incrementTotalVotes(id) {
+      db.collection("rooms").doc(id).update({
+        total_votes: firebase.firestore.FieldValue.increment(1)
+      })
   }
 
   // run showGroupCollection()

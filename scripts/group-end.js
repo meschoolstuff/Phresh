@@ -31,7 +31,29 @@ function getCurrentWinner() {
       var winner = doc.data().current_winner;
       console.log(winner);
       displayDetails(winner);
+      showVotes(id, winner);
+      showTotalVotes(id);
     });
+}
+
+// function shows how many votes the winning restaurant got
+function showVotes(roomId, winner) {
+  db.collection("rooms").doc(roomId + "").collection("votes").doc("r" + winner).get()
+      .then(function (doc) {
+          console.log(doc.data().id);
+          var votes = doc.data().value;
+          $("#votes-goes-here").text(votes);
+      })
+}
+
+// function shows how many votes the winning restaurant got
+function showTotalVotes(roomId) {
+  db.collection("rooms").doc(roomId + "").get()
+      .then(function (doc) {
+          var totalVotes = doc.data().total_votes;
+          console.log(doc.data().id);
+          $("#total-votes-goes-here").text(totalVotes);
+      })
 }
 
 // run the function

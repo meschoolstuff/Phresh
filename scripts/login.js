@@ -30,6 +30,10 @@ var uiConfig = {
             "preferences": preferences
           })
           .then(function () {
+            db.collection("rooms").doc(timeStamp + "").set({
+              total_votes: 0,
+              current_winner: 0
+            })
             db.collection("rooms").doc(timeStamp + "").collection("votes").doc("r1").set({
               value: 0,
               id: 1
@@ -51,9 +55,7 @@ var uiConfig = {
               id: 5
             })
             console.log("New user added to firestore");
-            db.collection("rooms").doc(timeStamp + "").set({
-              current_winner: 0
-            })
+            
           })
           .then(function () {
             window.location.assign("main.html"); //re-direct to main.html after signup
