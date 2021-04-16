@@ -73,5 +73,5 @@ displayUserInfo();
 // this is the logout function for the application
 const logout = document.getElementById("logout").addEventListener('click', function () {
     auth.signOut();
-    location.replace("login.html");
+    location.replace("index.html");
 })
