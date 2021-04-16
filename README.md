@@ -14,9 +14,8 @@ Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap 
-* ...
-* Google Maps API: 
-* Our google API key that is required for hosting google maps: AIzaSyCrvQOtoZY8NHztTLD60XfklA_IwjZ9vEo.
+* Google Maps Platform API
+* Our API key that is required for hosting google maps: AIzaSyCrvQOtoZY8NHztTLD60XfklA_IwjZ9vEo.
 	
 ## Content
 Content of the project folder:
@@ -78,5 +77,12 @@ It has the following subfolders and files:
 
 Firebase hosting files: 
 ├── .firebaserc...
+
+Our Image Sources:
+https://pbs.twimg.com/media/Dz74BBZXQAIykel.jpg
+https://www4.mcdonalds.ca/coupons/library/images/downloads-tile1.jpg
+https://curiocity.com/toronto/wp-content/uploads/2019/01/orig.jpg
+https://pennyandrusty.files.wordpress.com/2019/07/20190714_132852.jpg
+https://www.pickydiners.com/www/wp-content/uploads/2016/10/image-21.jpeg
 
 

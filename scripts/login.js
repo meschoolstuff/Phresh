@@ -5,9 +5,11 @@ var uiConfig = {
     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
       // User successfully signed in.
       // Return type determines whether we continue the redirect automatically or whether we leave that to developer to handle.
-      //------------------------------------------------------------------------------------------
       var user = authResult.user;
       var timeStamp = Date.now();
+
+      // for new users, this sets the default preferences to all choices, so that they user won't be left with an empty list 
+      // if they choose to view it immediately without picking preferences
       var preferences = [];
       preferences.push("fastfood");
       preferences.push("asianfood");
@@ -55,7 +57,7 @@ var uiConfig = {
               id: 5
             })
             console.log("New user added to firestore");
-            
+
           })
           .then(function () {
             window.location.assign("main.html"); //re-direct to main.html after signup

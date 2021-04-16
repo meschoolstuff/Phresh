@@ -1,15 +1,17 @@
+// displays the user's name
 function sayHello(){
     firebase.auth().onAuthStateChanged(function(somebody){
         if(somebody){
             console.log(somebody.uid);
+            // accesses the "users" database
             db.collection("users")
             .doc(somebody.uid)
-            .get()                      // Read!
+            // READ data
+            .get()
             .then(function(doc){
-                // console.log(doc.data().name);
                 var n = doc.data().name;
+                // places the data in a DOM element
                 $("#name-goes-here").text(n);
-                // do other things and get other things
             })
         }
     })

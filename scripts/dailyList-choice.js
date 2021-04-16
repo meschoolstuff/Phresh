@@ -1,4 +1,6 @@
+// gets the directions (map) of the restaurant
 function getDirections() {
+  // the id of the restaurant is extracted from the URL which was put there by a function on the previous page
   const parsedUrl = new URL(window.location.href);
   console.log(parsedUrl.searchParams.get("id"));
 
@@ -9,6 +11,7 @@ function getDirections() {
   // use this ID to read data from firestore
   db.collection("restaurants-list")
     .doc(id)
+    // READ data from the specified restaurant document   
     .get()
     .then(function (doc) {
       // with the id, we will read from the document the title, description and location of the restaurant document.

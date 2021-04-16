@@ -1,8 +1,12 @@
+
+// assigns an event listener to the "finish" button, which runs the two functions inside only when clicked, this button effectively
+// "saves" the user's settings when they make changes.
 document.getElementById("finish").addEventListener('click', function () {
     getFormInputs();
     newPage();
 });
 
+// this function retrieves the restaurant preferences selected by the user.
 function getFormInputs() {
     // Either true or false
     var fastFood = document.getElementById("fast").checked;
@@ -34,6 +38,7 @@ function getFormInputs() {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users")
             .doc(user.uid)
+            // WRITES data to the preferences field in the collection of the user document
             .update({
                 "preferences": preferences
             })
@@ -41,6 +46,8 @@ function getFormInputs() {
 }
 getFormInputs();
 
+// once the preferences are chosen, the user is taken to the daily list page to see their daily list 
+// with their preferences taken into consideration
 function newPage() {
     location.href = "dailyList-list.html"
 }
