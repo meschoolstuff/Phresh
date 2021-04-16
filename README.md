@@ -15,7 +15,6 @@ Technologies used for this project:
 * JavaScript
 * Bootstrap 
 * Google Maps Platform API
-* Our API key that is required for hosting google maps: AIzaSyCrvQOtoZY8NHztTLD60XfklA_IwjZ9vEo.
 	
 ## Content
 Content of the project folder:
