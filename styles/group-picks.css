@@ -1,3 +1,7 @@
+body {
+    padding-bottom: 70px;
+}
+
 p {
     font-size: 11pt;
 }
@@ -15,10 +19,11 @@ p {
     height: 245px;
 }
 
+
 #cardContainer {
     width: 360px;
     margin: 0 auto;
-    margin-bottom: 11vh;
+    overflow: scroll;
 }
 
 #cardContainer a {
