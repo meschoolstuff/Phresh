@@ -18,6 +18,7 @@ p {
 #cardContainer {
     width: 360px;
     margin: 0 auto;
+    margin-bottom: 11vh;
 }
 
 #cardContainer a {
